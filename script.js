@@ -19,7 +19,7 @@ movieApp.getGenresId = () => {
     })
 }
 
-movieApp.getMovies = (genres, decade) => {
+movieApp.getMovies = (genres, startDate, endDate) => {
     $.ajax({
         url: movieApp.endPoint,
         method: 'GET',
@@ -27,29 +27,75 @@ movieApp.getMovies = (genres, decade) => {
         data: {
             api_key: movieApp.apiKey,
             with_genres: genres,
-            primary_release_year: decade,
+            'primary_release_date.gte': startDate,
+            'primary_release_date.lte': endDate,
             'vote_average.lte': 5
         }
     }).then((res) => {
+     movieApp.displayMovie(res);
 
     })
 }
 
+movieApp.displayMovie = (movies) => {
+     
+     const index = Math.floor(Math.random() * movies.results.length);
+     console.log(movies.results[index].title);
+     // console.log(movies.results);
+
+
+     $('.recommendedMovie').html(`<img src="https://image.tmdb.org/t/p/w500/${movies.results[index].poster_path}"><p>${movies.results[index].title}</p>`)
+     
+     // console.log(movies.results[0].title);
+
+     
+}
+
 //Functions to be called on init
 movieApp.init = () => {
-    $('select').on('change', function () {
-        const getGenreValue = $('.genre').val();
-        const getDecadeValue = $('.decade').val();
-        const genreArray = movieApp.getGenresId();
-        //loop through the genre array and compare it to the value from the select menu
-        genreArray.forEach((item) => {
-            if (getGenreValue === item.name) {
-                const genreId = item.id;
-                console.log(genreId);
-
-
-            }
-        })
+    $('form').on('submit', function (e) {
+          e.preventDefault();
+          // getting genre id from dropdown menu
+          const getGenreValue = $('.genre').val();
+          // getting decade value from dropdown menu
+          const getDecadeValue = $('.decade').val();
+          let startDate;
+          let endDate;
+          if (getDecadeValue === "1950s") {
+               startDate = "1950-01-01";
+               endDate = "1959-12-31";
+          } else if (getDecadeValue === "1960s") {
+               startDate = "1960-01-01";
+               endDate = "1969-12-31";
+          } else if (getDecadeValue === "1970s") {
+               startDate = "1970-01-01";
+               endDate = "1979-12-31";
+          } else if (getDecadeValue === "1980s") {
+               startDate = "1980-01-01";
+               endDate = "1989-12-31";
+          } else if (getDecadeValue === "1990s") {
+               startDate = "1990-01-01";
+               endDate = "1999-12-31";
+          } else if (getDecadeValue === "2000s") {
+               startDate = "2000-01-01";
+               endDate = "2009-12-31";
+          } else if (getDecadeValue === "2010s") {
+               startDate = "2010-01-01";
+               endDate = "2019-12-31";
+          }
+          
+     
+          // requesting results from API
+          movieApp.getMovies(getGenreValue, startDate, endDate)
+        
+        //***MAY RETURN TO THIS loop through the genre array and compare it to the value from the select menu
+     //    const genreArray = movieApp.getGenresId();
+     //    genreArray.forEach((item) => {
+     //        if (getGenreValue === item.name) {
+     //            const genreId = item.id;
+     //            console.log(genreId);
+     //        }
+     //    })
     })
 
 }

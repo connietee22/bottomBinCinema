@@ -1,10 +1,8 @@
 //Namespace
 const movieApp = {};
-
 movieApp.apiKey = 'dc4483da5e7158fd55c3bc2ecaf212a3';
 movieApp.endPoint = 'https://api.themoviedb.org/3/discover/movie';
 movieApp.genreEndPoint = 'https://api.themoviedb.org/3/genre/movie/list'
-
 
 // API call to get movies data based on search parameters
 movieApp.getMovies = (genres, startDate, endDate) => {
@@ -24,7 +22,6 @@ movieApp.getMovies = (genres, startDate, endDate) => {
     })
 }
 
-
 // function to display the movie in the recommended movies section
 movieApp.displayMovie = (movies) => {
     
@@ -33,6 +30,9 @@ movieApp.displayMovie = (movies) => {
     
     // setting variables for error handling
     let imageSource = `https://image.tmdb.org/t/p/w500/${movies.results[index].poster_path}`
+    const title = `${movies.results[index].title}`;
+    const voteAverage = `${movies.results[index].vote_average}`;
+    const releaseDate = `${movies.results[index].release_date}`;
     let summary = `${movies.results[index].overview}`
 
     // check whether movie title has poster
@@ -45,19 +45,25 @@ movieApp.displayMovie = (movies) => {
     if (summary === "") {
         // if summary is missing, we'll replace with this copy 
         summary = "No summary available for this film. It's just TOO terrible.";
-    }
+    };
     
     // displaying the recommended movie in results section
     $('.recommendedMovie').html(`
         <img src=${imageSource}>
-        <span>${movies.results[index].title}</span>
-        <span>Vote Average: ${movies.results[index].vote_average}</span>
-        <span>Release Date: ${movies.results[index].release_date}</span>
+        <span>${title}</span>
+        <span>Vote Average: ${voteAverage} </span>
+        <span>Release Date: ${releaseDate}</span>
         <span>Summary: ${summary}</span>
+        <button class="listBtn">+</button>
+        <span>add to list</span>
     `)
-    
-     // <span>Summary: ${movies.results[index].overview}</span>
-}
+
+    $('button').on('click', function () {
+        console.log('hello');
+        $('.selectedMovies').append(`<li>${title}</li>`)
+
+    });
+};
 
 //Functions to be called on init
 movieApp.init = () => {
@@ -68,10 +74,13 @@ movieApp.init = () => {
         // getting decade value from dropdown menu
         const getDecadeValue = $('.decade').val();
 
-        // setting decade variables
-        let startDate;
-        let endDate;
+        //Error handling for empty select values
+        if (getGenreValue && getDecadeValue) {
 
+            // setting decade variables
+            let startDate;
+            let endDate;
+    
         // grabbing decade value and then setting the start and end dates required for ajax call
         if (getDecadeValue === "1950s") {
             startDate = "1950-01-01";
@@ -87,7 +96,7 @@ movieApp.init = () => {
             endDate = "1989-12-31";
         } else if (getDecadeValue === "1990s") {
             startDate = "1990-01-01";
-            endDate = "1999-12-31";
+            endDate = "1999-12-31"
         } else if (getDecadeValue === "2000s") {
             startDate = "2000-01-01";
             endDate = "2009-12-31";
@@ -96,12 +105,15 @@ movieApp.init = () => {
             endDate = "2019-12-31";
         }
         
-    
         // request the results from API based on genre + decade!
         movieApp.getMovies(getGenreValue, startDate, endDate)
         
+    } else {
+        alert('Please enter a genre & decade')
+    }
     })
-
+    
+    
 }
 
 //Document ready

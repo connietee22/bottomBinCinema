@@ -6,19 +6,7 @@ movieApp.endPoint = 'https://api.themoviedb.org/3/discover/movie';
 movieApp.genreEndPoint = 'https://api.themoviedb.org/3/genre/movie/list'
 
 
-movieApp.getGenresId = () => {
-    $.ajax({
-        url: movieApp.genreEndPoint,
-        method: 'GET',
-        dataType: 'json',
-        data: {
-            api_key: movieApp.apiKey,
-        }
-    }).then((res) => {
-
-    })
-}
-
+// API call to get movies data based on search parameters
 movieApp.getMovies = (genres, startDate, endDate) => {
     $.ajax({
         url: movieApp.endPoint,
@@ -32,45 +20,43 @@ movieApp.getMovies = (genres, startDate, endDate) => {
             'vote_average.lte': 5
         }
     }).then((res) => {
-    // movieApp.errorHandling(res);
-    movieApp.displayMovie(res);
-
+        movieApp.displayMovie(res);
     })
 }
 
 
-
-
+// function to display the movie in the recommended movies section
 movieApp.displayMovie = (movies) => {
     
+     // get a random number to represent an index number / random movie to display
     const index = Math.floor(Math.random() * movies.results.length);
+    
+    // setting variables for error handling
     let imageSource = `https://image.tmdb.org/t/p/w500/${movies.results[index].poster_path}`
-    let summary = `${ movies.results[index].overview }`
+    let summary = `${movies.results[index].overview}`
+
+    // check whether movie title has poster
     if (movies.results[index].poster_path === null) {
-        //replace with bottom bin logo image
+        //if no poster, replace with bottom bin logo image
         imageSource = "http://placekitten.com/200/300"
     }
 
-    // function isEmpty(summary) {
-    //     return (!summary || 0 === str.length);
-    // }
-
-    if (movies.results[index].overview === "") {
-        summary = "No summary available for this film, it's just TOO terrible."
+    // check whether movie title has written summary
+    if (summary === "") {
+        // if summary is missing, we'll replace with this copy 
+        summary = "No summary available for this film. It's just TOO terrible.";
     }
     
-
+    // displaying the recommended movie in results section
     $('.recommendedMovie').html(`
-    <img src=${imageSource}>
-    <span>${movies.results[index].title}</span>
-    <span>Vote Average: ${movies.results[index].vote_average}</span>
-    <span>Release Date: ${movies.results[index].release_date}</span>
-    <span>Summary: ${movies.results[index].overview}</span>
+        <img src=${imageSource}>
+        <span>${movies.results[index].title}</span>
+        <span>Vote Average: ${movies.results[index].vote_average}</span>
+        <span>Release Date: ${movies.results[index].release_date}</span>
+        <span>Summary: ${summary}</span>
     `)
     
-     // console.log(movies.results[0].title);
-
-    
+     // <span>Summary: ${movies.results[index].overview}</span>
 }
 
 //Functions to be called on init
@@ -81,8 +67,12 @@ movieApp.init = () => {
         const getGenreValue = $('.genre').val();
         // getting decade value from dropdown menu
         const getDecadeValue = $('.decade').val();
+
+        // setting decade variables
         let startDate;
         let endDate;
+
+        // grabbing decade value and then setting the start and end dates required for ajax call
         if (getDecadeValue === "1950s") {
             startDate = "1950-01-01";
             endDate = "1959-12-31";
@@ -107,17 +97,9 @@ movieApp.init = () => {
         }
         
     
-        // requesting results from API
+        // request the results from API based on genre + decade!
         movieApp.getMovies(getGenreValue, startDate, endDate)
         
-        //***MAY RETURN TO THIS loop through the genre array and compare it to the value from the select menu
-     //    const genreArray = movieApp.getGenresId();
-     //    genreArray.forEach((item) => {
-     //        if (getGenreValue === item.name) {
-     //            const genreId = item.id;
-     //            console.log(genreId);
-     //        }
-     //    })
     })
 
 }

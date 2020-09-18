@@ -2,7 +2,8 @@
 const movieApp = {};
 movieApp.apiKey = 'dc4483da5e7158fd55c3bc2ecaf212a3';
 movieApp.endPoint = 'https://api.themoviedb.org/3/discover/movie';
-movieApp.genreEndPoint = 'https://api.themoviedb.org/3/genre/movie/list'
+movieApp.genreEndPoint = 'https://api.themoviedb.org/3/genre/movie/list';
+// movieApp.titlesArray = [];
 
 // API call to get movies data based on search parameters
 movieApp.getMovies = (genres, startDate, endDate) => {
@@ -54,15 +55,19 @@ movieApp.displayMovie = (movies) => {
         <span>Vote Average: ${voteAverage} </span>
         <span>Release Date: ${releaseDate}</span>
         <span>Summary: ${summary}</span>
-        <button class="listBtn">+</button>
-        <span>add to list</span>
     `)
 
-    $('button').on('click', function () {
-        console.log('hello');
-        $('.selectedMovies').append(`<li>${title}</li>`)
+        // APPEND THIS IF WE ARE DOING STRETCH GOAL
+        // < button class="listBtn" > +</ >
+        //     <span>add to list</span>
 
-    });
+    //  STRETCH GOAL 
+    // $('button').on('click', function () {
+        
+    //             //adding movie title to the list
+    //             $('.selectedMovies').append(`<li>${title}</li>`)
+    //             movieApp.titlesArray.push(`${title}`);
+    // });
 };
 
 //Functions to be called on init

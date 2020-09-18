@@ -6,6 +6,13 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Bottom Bin Cinema</title>
 
+     <!-- importing google fonts -->
+     <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+     <!-- importing animate.css -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+     <!-- importing styles -->
      <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
@@ -13,13 +20,10 @@
      <header>
           <h1>Bottom Bin Cinema</h1>
           <h2>find a crappy movie to watch</h2>
-     </header>
-     <main>
 
-          <section>
-               <div class="dropdownContainer">
-                    <form>
-                         <!-- drop-down menu for genres -->
+               <form>
+                    <!-- drop-down menu for genres -->
+                    <div class="dropdownContainer">
                          <label for="genre" class="srOnly">Genre</label>
                          <select class="genre" name="genre" id="genre">
                               <option disabled selected>Choose a Genre</option>
@@ -42,7 +46,7 @@
                               <option value="10752">War</option>
                               <option value="37">Western</option>
                          </select>
-     
+          
                          <!-- drop-down menu for decades -->
                          <label for="decade" class="srOnly">Decade</label>
                          <select class="decade" name="decade" id="decade">
@@ -56,11 +60,13 @@
                               <option value="1960s">1960s</option>
                               <option value="1950s">1950s</option>
                          </select>
-     
-                         <input type="submit" value="Get movie">
-                    </form>
-               </div>
+                    </div>
+                    <input type="submit" value="Get movie">
+               </form>
+     </header>
+     <main>
 
+          <section>
                <div class="recommendedMovie">
                     <!-- html will be appended here when results determined -->
                     

@@ -1,0 +1,41 @@
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: clamp(1.2rem, 1.2vw, 1.8rem);
+    font-family: $bodyfont;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+h1,
+h3 {
+    font-family: $headingfont;
+}
+
+.wrapper {
+    width: 85%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

@@ -30,16 +30,16 @@ movieApp.displayMovie = (movies) => {
     const index = Math.floor(Math.random() * movies.results.length);
     
     // setting variables for error handling
-    let imageSource = `https://image.tmdb.org/t/p/w500/${movies.results[index].poster_path}`
     const title = `${movies.results[index].title}`;
     const voteAverage = `${movies.results[index].vote_average}`;
     const releaseDate = `${movies.results[index].release_date}`;
+    let imageSource = `"https://image.tmdb.org/t/p/w500/${movies.results[index].poster_path}" alt="${title}"`
     let summary = `${movies.results[index].overview}`
 
     // check whether movie title has poster
     if (movies.results[index].poster_path === null) {
         //if no poster, replace with bottom bin logo image
-        imageSource = "http://placekitten.com/200/300"
+        imageSource = `"./assets/bottomBinImageNotAvailable.jpg" alt="placeholder for missing ${title} poster"`
     }
 
     // check whether movie title has written summary

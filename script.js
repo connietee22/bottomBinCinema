@@ -3,7 +3,10 @@ const movieApp = {};
 movieApp.apiKey = 'dc4483da5e7158fd55c3bc2ecaf212a3';
 movieApp.endPoint = 'https://api.themoviedb.org/3/discover/movie';
 movieApp.genreEndPoint = 'https://api.themoviedb.org/3/genre/movie/list';
-// movieApp.titlesArray = [];
+let getGenreValue;
+let getDecadeValue;
+let startDate;
+let endDate;
 
 // API call to get movies data based on search parameters
 movieApp.getMovies = (genres, startDate, endDate) => {
@@ -23,9 +26,13 @@ movieApp.getMovies = (genres, startDate, endDate) => {
     })
 }
 
+movieApp.newMovie = (movies) => {
+    
+        
+}
+
 // function to display the movie in the recommended movies section
 movieApp.displayMovie = (movies) => {
-    
      // get a random number to represent an index number / random movie to display
     const index = Math.floor(Math.random() * movies.results.length);
     
@@ -49,15 +56,27 @@ movieApp.displayMovie = (movies) => {
     };
     
     // displaying the recommended movie in results section
-    $('.recommendedMovie').html(`
-        <img src=${imageSource}>
-        <div class="resultText">
-            <span>${title}</span>
-            <span>Vote Average: ${voteAverage} </span>
-            <span>Release Date: ${releaseDate}</span>
-            <span>Summary: ${summary}</span>
-        </div>
+    $('main').html(`
+        <section class="results" id="results">
+            <div class="wrapper">
+                    <div class="recommendedMovie">
+                        <img src=${imageSource}>
+                        <div class="resultText">
+                            <h3>${title}</h3>
+                            <span><span class="resultLabel">Vote Average:</span> ${voteAverage} </span>
+                            <span><span class="resultLabel">Release Date:</span> ${releaseDate}</span>
+                            <span><span class="resultLabel">Summary:</span> ${summary}</span>
+                            <button class='.newMovieBtn'>Click dis</button>
+                        </div>
+                    
+                    </div>
+            </div>
+        </section>
     `)
+
+    $('.newMovieBtn').on('click', function () {
+        movieApp.getMovies(getGenreValue, startDate, endDate);
+    })
 
         // APPEND THIS IF WE ARE DOING STRETCH GOAL
         // < button class="listBtn" > +</ >
@@ -77,16 +96,16 @@ movieApp.init = () => {
     $('form').on('submit', function (e) {
         e.preventDefault();
         // getting genre id from dropdown menu
-        const getGenreValue = $('.genre').val();
+        getGenreValue = $('.genre').val();
         // getting decade value from dropdown menu
-        const getDecadeValue = $('.decade').val();
+        getDecadeValue = $('.decade').val();
 
         //Error handling for empty select values
         if (getGenreValue && getDecadeValue) {
 
         // setting decade variables
-            let startDate;
-            let endDate;
+            // let startDate;
+            // let endDate;
         
         // grabbing decade value and then setting the start and end dates required for ajax call
         if (getDecadeValue === "1950s") {
@@ -117,7 +136,7 @@ movieApp.init = () => {
         
         // scrolling down to results section
         $('html, body').animate({
-            scrollTop: $("#results").offset().top
+            scrollTop: $("main").offset().top
         }, 1000);
         
     } else {

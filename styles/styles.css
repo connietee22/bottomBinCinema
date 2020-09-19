@@ -243,6 +243,7 @@ html {
 body {
   font-size: clamp(1.2rem, 1.2vw, 1.8rem);
   font-family: "Roboto", sans-serif;
+  line-height: 1.6;
 }
 
 h1,
@@ -255,8 +256,7 @@ ul {
   list-style: none;
 }
 
-h1,
-h3 {
+h1 {
   font-family: "Freckle Face", cursive;
 }
 
@@ -356,8 +356,8 @@ form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 80px 0px;
   width: 100%;
+  padding: 80px 0px;
 }
 
 .recommendedMovie img {
@@ -365,6 +365,8 @@ form {
   min-width: 30%;
   border: 1px solid black;
   margin-right: 40px;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
 }
 
 .resultText {
@@ -375,7 +377,18 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-top: 30px;
   width: 40%;
+}
+
+.resultText h3 {
+  text-transform: uppercase;
+  font-size: clamp(1.4rem, 1.6vw, 2rem);
+  font-weight: 700;
+}
+
+.resultText .resultLabel {
+  font-weight: 700;
 }
 
 footer {

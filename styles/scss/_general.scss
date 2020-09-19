@@ -6,6 +6,7 @@ html {
 body {
     font-size: clamp(1.2rem, 1.2vw, 1.8rem);
     font-family: $bodyfont;
+    line-height: 1.6;
 }
 
 h1,
@@ -18,8 +19,7 @@ ul {
     list-style: none;
 }
 
-h1,
-h3 {
+h1 {
     font-family: $headingfont;
 }
 

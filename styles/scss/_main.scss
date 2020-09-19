@@ -23,7 +23,7 @@ header {
 h1 {
     margin-bottom: 25px;
 
-    color: $yellow;
+    color: $logoColor;
 
     font-size: clamp(6.5rem, 7.5vw, 12rem);
     text-shadow: 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black;
@@ -32,8 +32,10 @@ h1 {
 
 //Box behind select menus
 .headerBox {
+    position: sticky;
+    top: 0;
     padding: 30px;
-    box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px #000;
     background: rgba(34, 34, 34, .9);
 }
 
@@ -46,8 +48,7 @@ h2 {
 
 //h3 over select menus
 .selectHeader {
-    color: #fff;
-    font-weight: 700;
+    color: $lightText;
     margin-top: 15px;
 }
 
@@ -62,19 +63,28 @@ select {
     margin-right: 10px;
     padding: 7.5px 15px;
     font-size: 1.4rem;
+
+    &:focus {
+        outline: 1px solid $logoColor;
+    }
 }
 
 //form submit button
 [type="submit"] {
     padding: 7px 30px;
     font-size: 1.6rem;
-    color: #321325;
 }
 
 //ADD HOVER EFFECT
 
 
 /********Results Section************/
+.results {
+    background: $resultBackground;
+    color: $lightText;
+
+
+}
 
 //Flex container holding movie results
 .recommendedMovie {
@@ -89,9 +99,9 @@ select {
     img {
         width: 300px;
         min-width: 30%;
-        border: 1px solid black;
+        border: 1px solid #000;
         margin-right: 40px;
-        box-shadow: 0 8px 6px -6px black;
+        box-shadow: 0 8px 6px -6px #000;
     }
 
     //Movie details
@@ -127,16 +137,6 @@ footer {
     justify-content: center;
     padding: 15px;
     background: #222;
-    color: #fff;
+    color: $lightText;
 }
 
-//changes
-//moved submit button into dropdown container
-//added a div behind header and selects
-//aligned everything left in box and took out margin on selects
-//styled footer
-
-// to do
-//Pick your poison h3
-//cta styling on button
-//h2 size smaller

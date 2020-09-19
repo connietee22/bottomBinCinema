@@ -278,23 +278,38 @@ img {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: #EEF0F2;
 }
 
 a:hover {
   color: #EA593E;
 }
 
+a:focus {
+  color: #EA593E;
+}
+
 .btn {
-  background: -webkit-gradient(linear, right top, left top, from(#68A691), to(#FDFA00));
-  background: linear-gradient(to left, #68A691, #FDFA00);
+  background: #0081AF;
   border: none;
+  -webkit-box-shadow: 0 8px 6px -6px #000;
+          box-shadow: 0 8px 6px -6px #000;
   padding: 7px 30px;
   font-size: 1.6rem;
-  color: #321325;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  font-weight: 600;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  color: #EEF0F2;
+}
+
+.btn:hover {
+  background: #00a7e2;
+  color: #fdfa00;
+}
+
+.btn:focus {
+  background: #00a7e2;
+  outline: 1px solid #fdfa00;
+  color: #fdfa00;
 }
 
 /********Header landing page************/
@@ -325,9 +340,12 @@ h1 {
 }
 
 .headerBox {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   padding: 30px;
-  -webkit-box-shadow: 0 8px 6px -6px black;
-          box-shadow: 0 8px 6px -6px black;
+  -webkit-box-shadow: 0 8px 6px -6px #000;
+          box-shadow: 0 8px 6px -6px #000;
   background: rgba(34, 34, 34, 0.9);
 }
 
@@ -339,8 +357,7 @@ h2 {
 }
 
 .selectHeader {
-  color: #fff;
-  font-weight: 700;
+  color: #EEF0F2;
   margin-top: 15px;
 }
 
@@ -363,13 +380,21 @@ select {
   font-size: 1.4rem;
 }
 
+select:focus {
+  outline: 1px solid #fdfa00;
+}
+
 [type="submit"] {
   padding: 7px 30px;
   font-size: 1.6rem;
-  color: #321325;
 }
 
 /********Results Section************/
+.results {
+  background: #253031;
+  color: #EEF0F2;
+}
+
 .recommendedMovie {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -382,10 +407,10 @@ select {
 .recommendedMovie img {
   width: 300px;
   min-width: 30%;
-  border: 1px solid black;
+  border: 1px solid #000;
   margin-right: 40px;
-  -webkit-box-shadow: 0 8px 6px -6px black;
-          box-shadow: 0 8px 6px -6px black;
+  -webkit-box-shadow: 0 8px 6px -6px #000;
+          box-shadow: 0 8px 6px -6px #000;
 }
 
 .recommendedMovie .resultText {
@@ -427,5 +452,5 @@ footer {
           justify-content: center;
   padding: 15px;
   background: #222;
-  color: #fff;
+  color: #EEF0F2;
 }

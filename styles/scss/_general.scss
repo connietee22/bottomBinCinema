@@ -41,20 +41,35 @@ img {
 
 a {
     text-decoration: none;
-    color: #fff;
+    color: $lightText;
 
     &:hover {
+        color: #EA593E;
+    }
+    &:focus {
         color: #EA593E;
     }
 }
 
 .btn {
-    background: linear-gradient(to left, #68A691, #FDFA00); 
+    background: $button;
     border: none;
+    box-shadow: 0 8px 6px -6px #000;
+    // border-radius: 20px;
     padding: 7px 30px;
     font-size: 1.6rem;
-    color: #321325;
-    transition: all 1s; 
-    font-weight: 600;
+    transition: all .3s; 
+    color: $lightText;
 
+
+    &:hover {
+        background: lighten($button, 10);
+        color: $logoColor
+    }
+
+    &:focus {
+        background: lighten($button, 10);
+        outline: 1px solid $logoColor;
+        color: $logoColor
+    }
 }

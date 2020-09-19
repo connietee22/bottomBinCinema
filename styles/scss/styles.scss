@@ -1,10 +1,16 @@
+//Colour variables
+$button: #0081AF;
+$logoColor: #fdfa00;
+$resultBackground: #253031;
+$lightText: #EEF0F2;
+
 // font variables
 $headingfont: 'Freckle Face', cursive;
 $bodyfont: 'Roboto', sans-serif;
-$yellow: #fdfa00;
+
 
 @import "setup";
 @import "general";
-@import "main";
+@import "main"; 
 @import "mediaQueries";
 

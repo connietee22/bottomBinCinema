@@ -56,39 +56,36 @@ movieApp.displayMovie = (movies) => {
     };
     
     // displaying the recommended movie in results section
-    $('main').html(`
+    // $('main').html(`
+    $('.mainResultsBox').html(`
         <section class="results" id="results">
             <div class="wrapper">
-                    <div class="recommendedMovie">
-                        <img src=${imageSource}>
-                        <div class="resultText">
-                            <h3>${title}</h3>
-                            <span><span class="resultLabel">Vote Average:</span> ${voteAverage} </span>
-                            <span><span class="resultLabel">Release Date:</span> ${releaseDate}</span>
-                            <span><span class="resultLabel">Summary:</span> ${summary}</span>
-                            <button class='.newMovieBtn'>Click dis</button>
-                        </div>
-                    
+                <div class="recommendedMovie">
+                    <img src=${imageSource}>
+                    <div class="resultText">
+                        <h3>${title}</h3>
+                        <span><span class="resultLabel">Vote Average:</span> ${voteAverage} </span>
+                        <span><span class="resultLabel">Release Date:</span> ${releaseDate}</span>
+                        <span><span class="resultLabel">Summary:</span> ${summary}</span>
+                        <button class="newMovieBtn">Click dis</button>
+                        <button class="listBtn"> + <span>add to list</span></button>
                     </div>
-            </div>
+                </div>
+            <div>
         </section>
     `)
+    
+    // event listener for "add to list" button -- movies can only be appended once 
+    $('.listBtn').one('click', function () {
+        $('ul').append(`<li>${title}</li>`);
+    });
 
+    //********NEEDS WORK -- TO FIND A NEW MOVIE WITH THE SAME GENRE/DECADE 
     $('.newMovieBtn').on('click', function () {
+        console.log("hello");
         movieApp.getMovies(getGenreValue, startDate, endDate);
     })
 
-        // APPEND THIS IF WE ARE DOING STRETCH GOAL
-        // < button class="listBtn" > +</ >
-        //     <span>add to list</span>
-
-    //  STRETCH GOAL 
-    // $('button').one('click', function () {
-        
-    //             //adding movie title to the list
-    //             $('.selectedMovies').append(`<li>${title}</li>`)
-    //             movieApp.titlesArray.push(`${title}`);
-    // });
 };
 
 //Functions to be called on init

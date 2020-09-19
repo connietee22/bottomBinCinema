@@ -67,8 +67,10 @@ movieApp.displayMovie = (movies) => {
                         <span><span class="resultLabel">Vote Average:</span> ${voteAverage} </span>
                         <span><span class="resultLabel">Release Date:</span> ${releaseDate}</span>
                         <span><span class="resultLabel">Summary:</span> ${summary}</span>
-                        <button class="newMovieBtn">Click dis</button>
-                        <button class="listBtn"> + <span>add to list</span></button>
+                        <div class="resultBtn">
+                            <button class="btn newMovieBtn">Another movie</button>
+                            <button class="btn listBtn"> + </button>
+                        </div>
                     </div>
                 </div>
             <div>

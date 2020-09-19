@@ -260,6 +260,10 @@ h1 {
   font-family: "Freckle Face", cursive;
 }
 
+h3 {
+  font-size: clamp(1.8rem, 1.6vw, 2rem);
+}
+
 .wrapper {
   width: 85%;
   max-width: 1250px;
@@ -281,6 +285,19 @@ a:hover {
   color: #EA593E;
 }
 
+.btn {
+  background: -webkit-gradient(linear, right top, left top, from(#68A691), to(#FDFA00));
+  background: linear-gradient(to left, #68A691, #FDFA00);
+  border: none;
+  padding: 7px 30px;
+  font-size: 1.6rem;
+  color: #321325;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  font-weight: 600;
+}
+
+/********Header landing page************/
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -295,30 +312,36 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("../assets/unsplashChrisLawtonVHS.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   height: 100vh;
+  background: url("../assets/unsplashChrisLawtonVHS.jpg") no-repeat fixed center/cover;
 }
 
 h1 {
+  margin-bottom: 25px;
   color: #fdfa00;
-  text-shadow: 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black;
   font-size: clamp(6.5rem, 7.5vw, 12rem);
+  text-shadow: 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black;
   text-transform: uppercase;
 }
 
 .headerBox {
-  background-color: #222;
-  padding: 25px;
+  padding: 30px;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
+  background: rgba(34, 34, 34, 0.9);
 }
 
 h2 {
+  margin-top: -10px;
   color: white;
-  font-size: clamp(3.5rem, 3vw, 5rem);
-  font-weight: bold;
-  text-transform: uppercase;
+  font-size: clamp(2.6rem, 1.8vw, 3.5rem);
+  font-weight: 700;
+}
+
+.selectHeader {
+  color: #fff;
+  font-weight: 700;
+  margin-top: 15px;
 }
 
 form {
@@ -332,31 +355,27 @@ form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 25px;
 }
 
-.dropdownContainer {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  margin-bottom: 20px;
+select {
+  margin-right: 10px;
+  padding: 7.5px 15px;
+  font-size: 1.4rem;
 }
 
 [type="submit"] {
-  padding: 5px 30px;
+  padding: 7px 30px;
+  font-size: 1.6rem;
+  color: #321325;
 }
 
-.results {
-  height: 100vh;
-}
-
+/********Results Section************/
 .recommendedMovie {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   width: 100%;
+  height: 100%;
   padding: 80px 0px;
 }
 
@@ -369,7 +388,7 @@ form {
           box-shadow: 0 8px 6px -6px black;
 }
 
-.resultText {
+.recommendedMovie .resultText {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -381,16 +400,24 @@ form {
   width: 40%;
 }
 
-.resultText h3 {
+.recommendedMovie .resultText h3 {
   text-transform: uppercase;
-  font-size: clamp(1.4rem, 1.6vw, 2rem);
   font-weight: 700;
 }
 
-.resultText .resultLabel {
+.recommendedMovie .resultText .resultLabel {
   font-weight: 700;
 }
 
+.recommendedMovie .resultText .resultBtn {
+  margin-top: 30px;
+}
+
+.listHeading {
+  color: black;
+}
+
+/********Footer Section************/
 footer {
   display: -webkit-box;
   display: -ms-flexbox;

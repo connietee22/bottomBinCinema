@@ -33,7 +33,7 @@ movieApp.displayMovie = (movies) => {
     const title = `${movies.results[index].title}`;
     const voteAverage = `${movies.results[index].vote_average}`;
     const releaseDate = `${movies.results[index].release_date}`;
-    let imageSource = `"https://image.tmdb.org/t/p/w500/${movies.results[index].poster_path}" alt="${title}"`
+    let imageSource = `"https://image.tmdb.org/t/p/w500/${movies.results[index].poster_path}" alt="${title} poster"`
     let summary = `${movies.results[index].overview}`
 
     // check whether movie title has poster
@@ -51,10 +51,12 @@ movieApp.displayMovie = (movies) => {
     // displaying the recommended movie in results section
     $('.recommendedMovie').html(`
         <img src=${imageSource}>
-        <span>${title}</span>
-        <span>Vote Average: ${voteAverage} </span>
-        <span>Release Date: ${releaseDate}</span>
-        <span>Summary: ${summary}</span>
+        <div class="resultText">
+            <span>${title}</span>
+            <span>Vote Average: ${voteAverage} </span>
+            <span>Release Date: ${releaseDate}</span>
+            <span>Summary: ${summary}</span>
+        </div>
     `)
 
         // APPEND THIS IF WE ARE DOING STRETCH GOAL
@@ -62,7 +64,7 @@ movieApp.displayMovie = (movies) => {
         //     <span>add to list</span>
 
     //  STRETCH GOAL 
-    // $('button').on('click', function () {
+    // $('button').one('click', function () {
         
     //             //adding movie title to the list
     //             $('.selectedMovies').append(`<li>${title}</li>`)
@@ -82,10 +84,10 @@ movieApp.init = () => {
         //Error handling for empty select values
         if (getGenreValue && getDecadeValue) {
 
-            // setting decade variables
+        // setting decade variables
             let startDate;
             let endDate;
-    
+        
         // grabbing decade value and then setting the start and end dates required for ajax call
         if (getDecadeValue === "1950s") {
             startDate = "1950-01-01";
@@ -113,11 +115,15 @@ movieApp.init = () => {
         // request the results from API based on genre + decade!
         movieApp.getMovies(getGenreValue, startDate, endDate)
         
+        // scrolling down to results section
+        $('html, body').animate({
+            scrollTop: $("#results").offset().top
+        }, 1000);
+        
     } else {
         alert('Please enter a genre & decade')
     }
     })
-    
     
 }
 

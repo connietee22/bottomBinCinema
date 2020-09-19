@@ -45,6 +45,30 @@ form {
     padding: 5px 30px;
 }
 
+.results {
+    height: 100vh;
+}
+
+.recommendedMovie {
+    display: flex;
+    justify-content: center;
+    padding: 80px 0px;
+    width: 100%;
+    img {
+        width: 300px;
+        min-width: 30%;
+        border: 1px solid black;
+        margin-right: 40px;
+    }
+}
+
+.resultText {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    
+}
+
 footer {
     display: flex;
     justify-content: center;

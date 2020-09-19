@@ -12,13 +12,18 @@ header {
 
 h1 {
     color: black;
-    font-size: clamp(8rem, 7.5vw, 12rem);
+    font-size: clamp(6.5rem, 7.5vw, 12rem);
     text-transform: uppercase;
+}
+
+.headerBox {
+    background-color: #222;
+    padding: 25px;
 }
 
 h2 {
     color: white;
-    font-size: clamp(4rem, 4.5vw, 6rem);
+    font-size: clamp(4rem, 3.5vw, 6rem);
     font-weight: bold;
 }
 
@@ -27,13 +32,32 @@ form {
     flex-direction: column;
     align-items: center;
     margin-top: 25px;
-    select {
-       margin: 0px 50px;
-    }
 }
 
+.dropdownContainer {
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
 
 [type="submit"] {
-    display: block;
-    width: 125px;
+    padding: 5px 30px;
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background: #222;
+    color: #fff;
+}
+
+//changes
+//moved submit button into dropdown container
+//added a div behind header and selects
+//aligned everything left in box and took out margin on selects
+//styled footer
+
+// to do
+//Pick your poison h3
+//cta styling on button
+//h2 size smaller

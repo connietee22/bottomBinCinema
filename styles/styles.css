@@ -274,7 +274,11 @@ img {
 
 a {
   text-decoration: none;
-  color: black;
+  color: #fff;
+}
+
+a:hover {
+  color: #EA593E;
 }
 
 header {
@@ -300,13 +304,18 @@ header {
 
 h1 {
   color: black;
-  font-size: clamp(8rem, 7.5vw, 12rem);
+  font-size: clamp(6.5rem, 7.5vw, 12rem);
   text-transform: uppercase;
+}
+
+.headerBox {
+  background-color: #222;
+  padding: 25px;
 }
 
 h2 {
   color: white;
-  font-size: clamp(4rem, 4.5vw, 6rem);
+  font-size: clamp(4rem, 3.5vw, 6rem);
   font-weight: bold;
 }
 
@@ -324,11 +333,24 @@ form {
   margin-top: 25px;
 }
 
-form select {
-  margin: 0px 50px;
+.dropdownContainer {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-bottom: 20px;
 }
 
 [type="submit"] {
-  display: block;
-  width: 125px;
+  padding: 5px 30px;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 15px;
+  background: #222;
+  color: #fff;
 }

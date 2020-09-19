@@ -37,5 +37,9 @@ img {
 
 a {
     text-decoration: none;
-    color: black;
+    color: #fff;
+
+    &:hover {
+        color: #EA593E;
+    }
 }

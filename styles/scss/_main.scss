@@ -37,7 +37,7 @@ h1 {
     top: 0;
     border-radius: 2px;
     padding: 25px;
-    box-shadow: 0 8px 6px -6px #000;
+    box-shadow: 0px 8px 6px -6px #000;
     background: rgba(34, 34, 34, .9);
 }
 
@@ -101,7 +101,7 @@ select {
         min-width: 30%;
         border: 1px solid #000;
         margin-right: 40px;
-        box-shadow: 0 8px 6px -6px #000;
+        box-shadow: 0px 8px 6px -6px #000;
     }
 
     //Movie details
@@ -142,7 +142,7 @@ select {
 
 .listDisplay {
     display: none;
-    padding: 40px 0;
+    padding: 40px 0px;
 
     width: 740px;
     min-width: 70%;

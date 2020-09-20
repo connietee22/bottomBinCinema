@@ -30,6 +30,16 @@ movieApp.getMovies = (genres, startDate, endDate) => {
     })
 }
 
+//TEST TO SHUFFLE AND RANDOMIZE****
+// function shuffle(movies) {
+//     console.log(movies);
+//     for (let i = movies.length - 1; i > 0; i--) {
+//         const indexTwo = Math.floor(Math.random() * (i + 1));
+//         [movies[i], movies[indexTwo]] = [movies[indexTwo], movies[i]];
+//     }
+//     console.log(movies);
+//     return movies;
+// }
 
 // function to display the movie in the recommended movies section
 movieApp.displayMovie = (movies) => {
@@ -43,15 +53,15 @@ movieApp.displayMovie = (movies) => {
     let imageSource = `"https://image.tmdb.org/t/p/w500/${movies.results[index].poster_path}" alt="${title} poster"`
     let summary = `${movies.results[index].overview}`
 
-    // checking whether movie title has poster
+    // checks whether movie title has poster
     if (movies.results[index].poster_path === null) {
         //if no poster, replace with our own logo image
         imageSource = `"./assets/bottomBinImageNotAvailable.jpg" alt="placeholder for missing ${title} poster - garbage can illustration from Vecteezy.com"`
     }
 
-    // check whether movie title has written summary
+    // checks whether movie title has written summary
     if (summary === "") {
-        // if summary is missing, we'll replace with this copy 
+        // if summary is empty/missing, we'll replace with this copy 
         summary = "No summary available for this film. It's just TOO terrible.";
     };
     
@@ -141,6 +151,6 @@ movieApp.init = () => {
 }
 
 //Document ready
-$(function () {
+$(function() {
     movieApp.init();
 });

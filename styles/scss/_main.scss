@@ -125,8 +125,33 @@ select {
     }
 }
 
+//Appended list section
+.selectedMovies {
+    background: #FDF1C3;
+}
+
+.listHide {
+    display: none;
+    padding: 40px 0;
+}
+
 .listHeading {
-    color: black;
+    // padding-top: 40px;
+
+    color: black;  
+    text-transform: uppercase;  
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    
+
+    li {
+        padding-right: 10px;
+        list-style-position: inside;
+        
+    }
 }
 
 /********Footer Section************/

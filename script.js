@@ -69,7 +69,7 @@ movieApp.displayMovie = (movies) => {
                         <span><span class="resultLabel">Summary:</span> ${summary}</span>
                         <div class="resultBtn">
                             <button class="btn newMovieBtn">Another movie</button>
-                            <button class="btn listBtn"> + </button>
+                            <a href="#list" class="btn listBtn"> + </a>
                         </div>
                     </div>
                 </div>
@@ -80,6 +80,7 @@ movieApp.displayMovie = (movies) => {
     // event listener for "add to list" button -- movies can only be appended once 
     $('.listBtn').one('click', function () {
         $('ul').append(`<li>${title}</li>`);
+        $('.listHide').show();
     });
 
     //********NEEDS WORK -- TO FIND A NEW MOVIE WITH THE SAME GENRE/DECADE 

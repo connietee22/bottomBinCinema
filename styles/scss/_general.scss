@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    font-size: clamp(1.2rem, 1.2vw, 1.8rem);
+    font-size: clamp(1.3rem, 1.2vw, 1.8rem);
     font-family: $bodyfont;
     line-height: 1.6;
 }
@@ -56,12 +56,11 @@ a {
     border: none;
     border-radius: 2px;
     box-shadow: 0 8px 6px -6px #000;
-    padding: 7px 30px;
+    padding: 3px 30px;
     font-size: 1.6rem;
     transition: all .3s; 
     color: $lightText;
-    text-transform: uppercase;
-
+    text-transform: lowercase;
 
     &:hover {
         background: lighten($button, 10);

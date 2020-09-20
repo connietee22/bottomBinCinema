@@ -44,7 +44,7 @@ h1 {
 h2 {
     margin-top: -10px;
     color: white;
-    font-size: clamp(2.6rem, 1.8vw, 3.5rem);
+    font-size: clamp(2.4rem, 1.8vw, 3.5rem);
     font-weight: 700;
 }
 
@@ -53,7 +53,6 @@ h2 {
     color: $lightText;
     margin-top: 10px;
     text-transform: uppercase;
-    font-weight: 700;
 }
 
 form {
@@ -124,13 +123,21 @@ select {
 
         .resultBtn {
             margin-top: 30px;
+            display: flex;
+        }
+        
+        .listBtn {
+            padding: 5px 30px;
+            margin-left: 5px;
         }
     }
 }
 
 //Appended list section
 .selectedMovies {
-    background: #FDF1C3;
+    // background: #FDF1C3;
+    background: url('../assets/wrinkledBrownPaper.jpg') no-repeat fixed center/cover;
+    
 }
 
 .listDisplay {
@@ -173,4 +180,5 @@ footer {
 .footerFlex {
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }

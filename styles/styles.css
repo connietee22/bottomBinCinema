@@ -237,8 +237,8 @@ html {
 }
 
 body {
-  font-size: clamp(1.2rem, 1.2vw, 1.8rem);
-  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.3rem, 1.2vw, 1.8rem);
+  font-family: "Kumbh Sans", sans-serif;
   line-height: 1.6;
 }
 
@@ -291,23 +291,23 @@ a:focus {
   border-radius: 2px;
   -webkit-box-shadow: 0 8px 6px -6px #000;
           box-shadow: 0 8px 6px -6px #000;
-  padding: 7px 30px;
+  padding: 3px 30px;
   font-size: 1.6rem;
   -webkit-transition: all .3s;
   transition: all .3s;
   color: #EEF0F2;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 .btn:hover {
   background: #00a7e2;
-  color: #fdfa00;
+  color: #f6da21;
 }
 
 .btn:focus {
   background: #00a7e2;
-  outline: 1px solid #fdfa00;
-  color: #fdfa00;
+  outline: 1px solid #f6da21;
+  color: #f6da21;
 }
 
 /********Header landing page************/
@@ -331,7 +331,7 @@ header {
 
 h1 {
   margin-bottom: 20px;
-  color: #fdfa00;
+  color: #f6da21;
   font-size: clamp(6.5rem, 7.5vw, 12rem);
   text-align: center;
   text-shadow: 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black;
@@ -352,7 +352,7 @@ h1 {
 h2 {
   margin-top: -10px;
   color: white;
-  font-size: clamp(2.6rem, 1.8vw, 3.5rem);
+  font-size: clamp(2.4rem, 1.8vw, 3.5rem);
   font-weight: 700;
 }
 
@@ -360,7 +360,6 @@ h2 {
   color: #EEF0F2;
   margin-top: 10px;
   text-transform: uppercase;
-  font-weight: 700;
 }
 
 form {
@@ -384,7 +383,7 @@ select {
 }
 
 select:focus {
-  outline: 1px solid #fdfa00;
+  outline: 1px solid #f6da21;
 }
 
 [type="submit"] {
@@ -444,10 +443,18 @@ select:focus {
 
 .recommendedMovie .resultText .resultBtn {
   margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.recommendedMovie .resultText .listBtn {
+  padding: 5px 30px;
+  margin-left: 5px;
 }
 
 .selectedMovies {
-  background: #FDF1C3;
+  background: url("../assets/wrinkledBrownPaper.jpg") no-repeat fixed center/cover;
 }
 
 .listDisplay {
@@ -490,6 +497,7 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

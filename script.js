@@ -1,4 +1,4 @@
-//Namespace
+//Namespacing + declaring global variables
 const movieApp = {};
 movieApp.apiKey = 'dc4483da5e7158fd55c3bc2ecaf212a3';
 movieApp.endPoint = 'https://api.themoviedb.org/3/discover/movie';
@@ -8,7 +8,7 @@ let getDecadeValue;
 let startDate;
 let endDate;
 
-// API call to get movies data based on search parameters
+// API call to grab movies data based on search parameters
 movieApp.getMovies = (genres, startDate, endDate) => {
     $.ajax({
         url: movieApp.endPoint,
@@ -16,12 +16,16 @@ movieApp.getMovies = (genres, startDate, endDate) => {
         dataType: 'json',
         data: {
             api_key: movieApp.apiKey,
+            //fetching movies for selected genre
             with_genres: genres,
+            //fetching movies for selected decade
             'primary_release_date.gte': startDate,
             'primary_release_date.lte': endDate,
+            //fetching movies rated under 5/10
             'vote_average.lte': 5
         }
     }).then((res) => {
+        //using the data to display movie
         movieApp.displayMovie(res);
     })
 }
@@ -29,20 +33,20 @@ movieApp.getMovies = (genres, startDate, endDate) => {
 
 // function to display the movie in the recommended movies section
 movieApp.displayMovie = (movies) => {
-     // get a random number to represent an index number / random movie to display
+    // variable that results in a random number representing an index number, and ultimately the random movie to be displayed in the movies.results array
     const index = Math.floor(Math.random() * movies.results.length);
-    
-    // setting variables for error handling
+
+    // defining other required variables
     const title = `${movies.results[index].title}`;
     const voteAverage = `${movies.results[index].vote_average}`;
     const releaseDate = `${movies.results[index].release_date}`;
     let imageSource = `"https://image.tmdb.org/t/p/w500/${movies.results[index].poster_path}" alt="${title} poster"`
     let summary = `${movies.results[index].overview}`
 
-    // check whether movie title has poster
+    // checking whether movie title has poster
     if (movies.results[index].poster_path === null) {
-        //if no poster, replace with bottom bin logo image
-        imageSource = `"./assets/bottomBinImageNotAvailable.jpg" alt="placeholder for missing ${title} poster - garbage can logo from Vecteezy.com"`
+        //if no poster, replace with our own logo image
+        imageSource = `"./assets/bottomBinImageNotAvailable.jpg" alt="placeholder for missing ${title} poster - garbage can illustration from Vecteezy.com"`
     }
 
     // check whether movie title has written summary
@@ -51,8 +55,7 @@ movieApp.displayMovie = (movies) => {
         summary = "No summary available for this film. It's just TOO terrible.";
     };
     
-    // displaying the recommended movie in results section
-    // $('main').html(`
+    // displaying the recommended movie in the results section
     $('.mainResultsBox').html(`
         <section class="results" id="results">
             <div class="wrapper">
@@ -60,12 +63,12 @@ movieApp.displayMovie = (movies) => {
                     <img src=${imageSource}>
                     <div class="resultText">
                         <h3>${title}</h3>
-                        <span><span class="resultLabel">Vote Average:</span> ${voteAverage} </span>
+                        <span><span class="resultLabel">Vote Average:</span> ${voteAverage}/10</span>
                         <span><span class="resultLabel">Release Date:</span> ${releaseDate}</span>
                         <span><span class="resultLabel">Summary:</span> ${summary}</span>
                         <div class="resultBtn">
                             <button class="btn newMovieBtn">Get another</button>
-                            <a href="#list" class="btn listBtn"> + </a>
+                            <a href="#list" class="btn listBtn"> + watch list</a>
                         </div>
                     </div>
                 </div>
@@ -73,15 +76,15 @@ movieApp.displayMovie = (movies) => {
         </section>
     `)
     
-    // event listener for "add to list" button -- movies can only be appended once 
+    // event listener for "add to list" button -- with .one instead of .on, action can only be appended once 
     $('.listBtn').one('click', function () {
         $('ul').append(`<li>${title}</li>`);
+        //listDisplay is initially set to display: none so it doesn't appear on the screen on refresh -- will show and refresh itself once the list button is clicked.
         $('.listDisplay').show();
     });
 
-    //********NEEDS WORK -- TO FIND A NEW MOVIE WITH THE SAME GENRE/DECADE 
+    //allows users to easily select a new movie within the same genre/decade initially selected  
     $('.newMovieBtn').on('click', function () {
-        console.log("hello");
         movieApp.getMovies(getGenreValue, startDate, endDate);
     })
 
@@ -91,19 +94,15 @@ movieApp.displayMovie = (movies) => {
 movieApp.init = () => {
     $('form').on('submit', function (e) {
         e.preventDefault();
-        // getting genre id from dropdown menu
+        // grabbing genre id from dropdown menu
         getGenreValue = $('.genre').val();
-        // getting decade value from dropdown menu
+        // grabbing decade value from dropdown menu
         getDecadeValue = $('.decade').val();
 
-        //Error handling for empty select values
+        //Error handling if user forgets to select a drop-down item
         if (getGenreValue && getDecadeValue) {
-
-        // setting decade variables
-            // let startDate;
-            // let endDate;
         
-        // grabbing decade value and then setting the start and end dates required for ajax call
+        // looks at the decade chosen, sets the decade's start and end date arguments to be passed inside the ajax call
         if (getDecadeValue === "1950s") {
             startDate = "1950-01-01";
             endDate = "1959-12-31";
@@ -130,7 +129,7 @@ movieApp.init = () => {
         // request the results from API based on genre + decade!
         movieApp.getMovies(getGenreValue, startDate, endDate)
         
-        // scrolling down to results section
+        // to smoothly scroll to results section
         $('html, body').animate({
             scrollTop: $("main").offset().top
         }, 1000);
@@ -139,7 +138,6 @@ movieApp.init = () => {
         alert('Pick a genre + decade to start this!')
     }
     })
-    
 }
 
 //Document ready

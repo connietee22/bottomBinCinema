@@ -336,6 +336,7 @@ h1 {
   margin-bottom: 25px;
   color: #fdfa00;
   font-size: clamp(6.5rem, 7.5vw, 12rem);
+  text-align: center;
   text-shadow: 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black;
   text-transform: uppercase;
 }
@@ -356,12 +357,11 @@ h2 {
   color: white;
   font-size: clamp(2.6rem, 1.8vw, 3.5rem);
   font-weight: 700;
-  text-align: center;
 }
 
 .selectHeader {
   color: #EEF0F2;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 form {
@@ -380,6 +380,7 @@ form {
 select {
   margin-right: 10px;
   padding: 7.5px 15px;
+  width: 175px;
   font-size: 1.4rem;
 }
 
@@ -389,6 +390,7 @@ select:focus {
 
 [type="submit"] {
   padding: 7px 30px;
+  width: 168px;
   font-size: 1.6rem;
 }
 
@@ -450,13 +452,59 @@ select:focus {
 
 /********Footer Section************/
 footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   padding: 15px;
   background: #222;
   color: #EEF0F2;
+}
+
+.footerFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .recommendedMovie {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .recommendedMovie .resultText {
+    width: 300px;
+    min-width: 30%;
+  }
+  .recommendedMovie img {
+    margin: 0px;
+  }
+  .newMovieBtn {
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 605px) {
+  .headerBox {
+    text-align: center;
+  }
+  .selectHeader {
+    margin-bottom: 6px;
+  }
+  select {
+    margin: 0px 0px 6px 0px;
+  }
+  .footerFlex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }

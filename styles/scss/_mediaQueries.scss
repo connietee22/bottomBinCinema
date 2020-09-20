@@ -1,0 +1,37 @@
+@media (max-width: 768px) {
+    .recommendedMovie {
+        flex-direction: column;
+        align-items: center;
+        .resultText {
+            width: 300px;
+            min-width: 30%;
+        }
+        img {
+            margin: 0px;
+        }
+    }
+
+    .newMovieBtn {
+        margin-right: 5px;
+    }
+}
+
+
+@media (max-width: 605px) {
+    .headerBox {
+        text-align: center;
+    }
+
+    .selectHeader {
+        margin-bottom: 6px;
+    }
+
+    select {
+        margin: 0px 0px 6px 0px;
+    }
+
+    .footerFlex {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -26,6 +26,7 @@ h1 {
     color: $logoColor;
 
     font-size: clamp(6.5rem, 7.5vw, 12rem);
+    text-align: center;
     text-shadow: 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black;
     text-transform: uppercase;
 }
@@ -45,13 +46,12 @@ h2 {
     color: white;
     font-size: clamp(2.6rem, 1.8vw, 3.5rem);
     font-weight: 700;
-    text-align: center;
 }
 
 //h3 over select menus
 .selectHeader {
     color: $lightText;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 form {
@@ -64,6 +64,7 @@ form {
 select {
     margin-right: 10px;
     padding: 7.5px 15px;
+    width: 175px;
     font-size: 1.4rem;
 
     &:focus {
@@ -74,6 +75,7 @@ select {
 //form submit button
 [type="submit"] {
     padding: 7px 30px;
+    width: 168px;
     font-size: 1.6rem;
 }
 
@@ -130,10 +132,12 @@ select {
 /********Footer Section************/
 
 footer {
-    display: flex;
-    justify-content: center;
     padding: 15px;
     background: #222;
     color: $lightText;
 }
 
+.footerFlex {
+    display: flex;
+    justify-content: space-between;
+}

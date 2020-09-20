@@ -46,7 +46,7 @@ movieApp.displayMovie = (movies) => {
     // check whether movie title has poster
     if (movies.results[index].poster_path === null) {
         //if no poster, replace with bottom bin logo image
-        imageSource = `"./assets/bottomBinImageNotAvailable.jpg" alt="placeholder for missing ${title} poster"`
+        imageSource = `"./assets/bottomBinImageNotAvailable.jpg" alt="placeholder for missing ${title} poster - garbage can logo from Vecteezy.com"`
     }
 
     // check whether movie title has written summary

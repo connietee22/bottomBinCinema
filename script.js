@@ -26,10 +26,6 @@ movieApp.getMovies = (genres, startDate, endDate) => {
     })
 }
 
-movieApp.newMovie = (movies) => {
-    
-        
-}
 
 // function to display the movie in the recommended movies section
 movieApp.displayMovie = (movies) => {
@@ -68,7 +64,7 @@ movieApp.displayMovie = (movies) => {
                         <span><span class="resultLabel">Release Date:</span> ${releaseDate}</span>
                         <span><span class="resultLabel">Summary:</span> ${summary}</span>
                         <div class="resultBtn">
-                            <button class="btn newMovieBtn">Another movie</button>
+                            <button class="btn newMovieBtn">Get another</button>
                             <a href="#list" class="btn listBtn"> + </a>
                         </div>
                     </div>
@@ -80,7 +76,7 @@ movieApp.displayMovie = (movies) => {
     // event listener for "add to list" button -- movies can only be appended once 
     $('.listBtn').one('click', function () {
         $('ul').append(`<li>${title}</li>`);
-        $('.listHide').show();
+        $('.listDisplay').show();
     });
 
     //********NEEDS WORK -- TO FIND A NEW MOVIE WITH THE SAME GENRE/DECADE 
@@ -140,7 +136,7 @@ movieApp.init = () => {
         }, 1000);
         
     } else {
-        alert('Please enter a genre & decade')
+        alert('Pick a genre + decade to start this!')
     }
     })
     

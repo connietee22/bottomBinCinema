@@ -21,7 +21,7 @@ header {
 }
 
 h1 {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 
     color: $logoColor;
 
@@ -36,7 +36,7 @@ h1 {
     position: sticky;
     top: 0;
     border-radius: 2px;
-    padding: 30px;
+    padding: 25px;
     box-shadow: 0 8px 6px -6px #000;
     background: rgba(34, 34, 34, .9);
 }
@@ -52,6 +52,8 @@ h2 {
 .selectHeader {
     color: $lightText;
     margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 form {
@@ -108,7 +110,8 @@ select {
         display: flex;
         flex-direction: column;
         padding-top: 30px;
-        width: 40%;
+        min-width: 40%;
+        width: 400px;
         
         h3 {
             text-transform: uppercase;
@@ -130,9 +133,14 @@ select {
     background: #FDF1C3;
 }
 
-.listHide {
+.listDisplay {
     display: none;
     padding: 40px 0;
+
+    width: 740px;
+    min-width: 70%;
+    // max-width: 1250px;
+    margin: 0px auto;
 }
 
 .listHeading {

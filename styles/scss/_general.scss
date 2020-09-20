@@ -16,11 +16,11 @@ p,
 ul {
     padding: 0;
     margin: 0;
-    // list-style: none;
 }
 
 h1 {
     font-family: $headingfont;
+    line-height: 1.1;
 }
 
 h3 {
@@ -28,8 +28,8 @@ h3 {
 }
 
 .wrapper {
-    width: 85%;
-    max-width: 1250px;
+    width: 75%;
+    max-width: 1150px;
     margin: 0 auto;
 }
 
@@ -60,6 +60,7 @@ a {
     font-size: 1.6rem;
     transition: all .3s; 
     color: $lightText;
+    text-transform: uppercase;
 
 
     &:hover {

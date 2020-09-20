@@ -54,8 +54,8 @@ a {
 .btn {
     background: $button;
     border: none;
+    border-radius: 2px;
     box-shadow: 0 8px 6px -6px #000;
-    // border-radius: 20px;
     padding: 7px 30px;
     font-size: 1.6rem;
     transition: all .3s; 

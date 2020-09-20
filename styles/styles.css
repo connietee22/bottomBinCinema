@@ -261,7 +261,7 @@ h3 {
 }
 
 .wrapper {
-  width: 75%;
+  width: 80%;
   max-width: 1150px;
   margin: 0 auto;
 }
@@ -494,10 +494,16 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  text-align: center;
+}
+
+.creditsFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (max-width: 768px) {

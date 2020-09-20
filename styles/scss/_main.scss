@@ -179,6 +179,10 @@ footer {
 
 .footerFlex {
     display: flex;
-    justify-content: space-between;
     text-align: center;
+    justify-content: space-between;
+}
+
+.creditsFlex {
+    display: flex;
 }

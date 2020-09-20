@@ -31,11 +31,13 @@ movieApp.getMovies = (genres, startDate, endDate) => {
 }
 
 //TEST TO SHUFFLE AND RANDOMIZE****
-// function shuffle(movies) {
-//     console.log(movies);
+// movieApp.shuffle = (movies) => {
+
 //     for (let i = movies.length - 1; i > 0; i--) {
-//         const indexTwo = Math.floor(Math.random() * (i + 1));
-//         [movies[i], movies[indexTwo]] = [movies[indexTwo], movies[i]];
+//         const indexTwo = Math.floor(Math.random() * i);
+//         const temp = movies[i];
+//         movies[i] = movies[indexTwo];
+//         movies[indexTwo] = temp;
 //     }
 //     console.log(movies);
 //     return movies;
@@ -45,7 +47,7 @@ movieApp.getMovies = (genres, startDate, endDate) => {
 movieApp.displayMovie = (movies) => {
     // variable that results in a random number representing an index number, and ultimately the random movie to be displayed in the movies.results array
     const index = Math.floor(Math.random() * movies.results.length);
-
+    
     // defining other required variables
     const title = `${movies.results[index].title}`;
     const voteAverage = `${movies.results[index].vote_average}`;

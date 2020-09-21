@@ -34,16 +34,18 @@ h1 {
 //Box behind select menus
 .headerBox {
     position: sticky;
+
     top: 0;
     border-radius: 2px;
     padding: 25px;
-    box-shadow: 0px 8px 6px -6px #000;
+    box-shadow: 0px 8px 6px -6px $darkText;
+
     background: rgba(34, 34, 34, .9);
 }
 
 h2 {
     margin-top: -10px;
-    color: white;
+    color: $lightText;
     font-size: clamp(2.4rem, 1.8vw, 3.5rem);
     font-weight: 700;
 }
@@ -66,6 +68,7 @@ select {
     margin-right: 10px;
     padding: 7.5px 15px;
     width: 175px;
+
     font-size: 1.4rem;
 
     &:focus {
@@ -99,9 +102,9 @@ select {
     img {
         width: 300px;
         min-width: 30%;
-        border: 1px solid #000;
+        border: 1px solid $darkText;
         margin-right: 40px;
-        box-shadow: 0px 8px 6px -6px #000;
+        box-shadow: 0px 8px 6px -6px $darkText;
     }
 
     //Movie details
@@ -147,7 +150,7 @@ select {
 }
 
 .listHeading {
-    color: black;  
+    color: $darkText;  
     text-transform: uppercase;  
 }
 
@@ -166,7 +169,7 @@ ul {
 
 footer {
     padding: 15px;
-    background: #222;
+    background: $footerBackground;
     color: $lightText;
 }
 

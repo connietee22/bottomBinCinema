@@ -3,13 +3,15 @@ $button: #0081AF;
 $logoColor: #f6da21;
 $resultBackground: #253031;
 $lightText: #EEF0F2;
+$darkText: #000;
+$footerBackground: #222;
+$footerHover: #EA593E;
 
 // font variables
 $headingfont: 'Freckle Face', cursive;
-// $bodyfont: 'Roboto', sans-serif;
 $bodyfont: 'Kumbh Sans', sans-serif;
 
-
+//Partial imports
 @import "setup";
 @import "general";
 @import "main"; 

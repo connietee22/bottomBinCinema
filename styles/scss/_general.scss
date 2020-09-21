@@ -14,8 +14,8 @@ h2,
 h3,
 p,
 ul {
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
 }
 
 h1 {
@@ -30,7 +30,7 @@ h3 {
 .wrapper {
     width: 80%;
     max-width: 1150px;
-    margin: 0 auto;
+    margin: 0px auto;
 }
 
 img {
@@ -44,32 +44,38 @@ a {
     color: $lightText;
 
     &:hover {
-        color: #EA593E;
+        color: $footerHover;
     }
     &:focus {
-        color: #EA593E;
+        color: $footerHover;
     }
 }
 
 .btn {
-    background: $button;
     border: none;
     border-radius: 2px;
-    box-shadow: 0 8px 6px -6px #000;
+    box-shadow: 0px 8px 6px -6px $darkText;
     padding: 3px 30px;
-    font-size: 1.6rem;
-    transition: all .3s; 
+
+    background: $button;
     color: $lightText;
+
+    font-size: 1.6rem;
     text-transform: lowercase;
+    font-weight: bold;
+    text-align: center;
+
+    transition: all .3s; 
+
 
     &:hover {
         background: lighten($button, 10);
-        color: $logoColor
+        color: $logoColor;
     }
 
     &:focus {
         background: lighten($button, 10);
         outline: 1px solid $logoColor;
-        color: $logoColor
+        color: $logoColor;
     }
 }

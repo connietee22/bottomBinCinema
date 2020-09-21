@@ -30,19 +30,6 @@ movieApp.getMovies = (genres, startDate, endDate) => {
     })
 }
 
-//TEST TO SHUFFLE AND RANDOMIZE****
-// movieApp.shuffle = (movies) => {
-
-//     for (let i = movies.length - 1; i > 0; i--) {
-//         const indexTwo = Math.floor(Math.random() * i);
-//         const temp = movies[i];
-//         movies[i] = movies[indexTwo];
-//         movies[indexTwo] = temp;
-//     }
-//     console.log(movies);
-//     return movies;
-// }
-
 // function to display the movie in the recommended movies section
 movieApp.displayMovie = (movies) => {
     // variable that results in a random number representing an index number, and ultimately the random movie to be displayed in the movies.results array
@@ -52,23 +39,23 @@ movieApp.displayMovie = (movies) => {
     const title = `${movies.results[index].title}`;
     const voteAverage = `${movies.results[index].vote_average}`;
     const releaseDate = `${movies.results[index].release_date}`;
-    let imageSource = `"https://image.tmdb.org/t/p/w500/${movies.results[index].poster_path}" alt="${title} poster"`
+    let imageSource = `'https://image.tmdb.org/t/p/w500/${movies.results[index].poster_path}' alt='${title} poster'`
     let summary = `${movies.results[index].overview}`
 
     // checks whether movie title has poster
     if (movies.results[index].poster_path === null) {
         //if no poster, replace with our own logo image
-        imageSource = `"./assets/bottomBinImageNotAvailable.jpg" alt="placeholder for missing ${title} poster - garbage can illustration from Vecteezy.com"`
+        imageSource = `'./assets/bottomBinImageNotAvailable.jpg' alt='placeholder for missing ${title} poster - garbage can illustration from Vecteezy.com'`
     }
 
     // checks whether movie title has written summary
-    if (summary === "") {
+    if (summary === '') {
         // if summary is empty/missing, we'll replace with this copy 
-        summary = "No summary available for this film. It's just TOO terrible.";
+        summary = 'No summary available for this film. It\'s just TOO terrible.';
     };
     
     // displaying the recommended movie in the results section
-    $('.mainResultsBox').html(`
+    $(".mainResultsBox").html(`
         <section class="results" id="results">
             <div class="wrapper">
                 <div class="recommendedMovie">
@@ -79,14 +66,14 @@ movieApp.displayMovie = (movies) => {
                         <span><span class="resultLabel">Release Date:</span> ${releaseDate}</span>
                         <span><span class="resultLabel">Summary:</span> ${summary}</span>
                         <div class="resultBtn">
-                            <button class="btn newMovieBtn">Get another</button>
-                            <a href="#list" class="btn listBtn"> + watch list</a>
+                            <button class="btn newMovieBtn" aria-label="Click to get another movie">Get another</button>
+                            <a href="#list" class="btn listBtn" aria-label="click to add to watch list"> + watch list</a>
                         </div>
                     </div>
                 </div>
             <div>
         </section>
-    `)
+    `);
     
     // event listener for "add to list" button -- with .one instead of .on, action can only be appended once 
     $('.listBtn').one('click', function () {
@@ -115,40 +102,40 @@ movieApp.init = () => {
         if (getGenreValue && getDecadeValue) {
         
         // looks at the decade chosen, sets the decade's start and end date arguments to be passed inside the ajax call
-        if (getDecadeValue === "1950s") {
-            startDate = "1950-01-01";
-            endDate = "1959-12-31";
-        } else if (getDecadeValue === "1960s") {
-            startDate = "1960-01-01";
-            endDate = "1969-12-31";
-        } else if (getDecadeValue === "1970s") {
-            startDate = "1970-01-01";
-            endDate = "1979-12-31";
-        } else if (getDecadeValue === "1980s") {
-            startDate = "1980-01-01";
-            endDate = "1989-12-31";
-        } else if (getDecadeValue === "1990s") {
-            startDate = "1990-01-01";
-            endDate = "1999-12-31"
-        } else if (getDecadeValue === "2000s") {
-            startDate = "2000-01-01";
-            endDate = "2009-12-31";
-        } else if (getDecadeValue === "2010s") {
-            startDate = "2010-01-01";
-            endDate = "2019-12-31";
+            if (getDecadeValue === '1950s') {
+                startDate = '1950-01-01';
+                endDate = '1959-12-31';
+            } else if (getDecadeValue === '1960s') {
+                startDate = '1960-01-01';
+                endDate = '1969-12-31';
+            } else if (getDecadeValue === '1970s') {
+                startDate = '1970-01-01';
+                endDate = '1979-12-31';
+            } else if (getDecadeValue === '1980s') {
+                startDate = '1980-01-01';
+                endDate = '1989-12-31';
+            } else if (getDecadeValue === '1990s') {
+                startDate = '1990-01-01';
+                endDate = '1999-12-31'
+            } else if (getDecadeValue === '2000s') {
+                startDate = '2000-01-01';
+                endDate = '2009-12-31';
+            } else if (getDecadeValue === '2010s') {
+                startDate = '2010-01-01';
+                endDate = '2019-12-31';
+            }
+            
+            // request the results from API based on genre + decade!
+            movieApp.getMovies(getGenreValue, startDate, endDate)
+            
+            // to smoothly scroll to results section
+            $('html, body').animate({
+                scrollTop: $('main').offset().top
+            }, 1000);
+        
+        } else {
+            alert('Pick a genre + decade to start this!')
         }
-        
-        // request the results from API based on genre + decade!
-        movieApp.getMovies(getGenreValue, startDate, endDate)
-        
-        // to smoothly scroll to results section
-        $('html, body').animate({
-            scrollTop: $("main").offset().top
-        }, 1000);
-        
-    } else {
-        alert('Pick a genre + decade to start this!')
-    }
     })
 }
 

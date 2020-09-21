@@ -53,7 +53,6 @@
                               <!-- drop-down menu for decades -->
                               <label for="decade" class="srOnly">Decade</label>
                               <select class="decade" name="decade" id="decade">
-                                   <!-- can we leave a dash here? -->
                                    <option disabled selected>Choose Decade</option>
                                    <option value="2010s">2010s</option>
                                    <option value="2000s">2000s</option>
@@ -63,12 +62,12 @@
                                    <option value="1960s">1960s</option>
                                    <option value="1950s">1950s</option>
                               </select>
-                              <input class="btn" type="submit" value="Get movie">
+                              <input class="btn" type="submit" value="Get movie" aria-label="click to submit choices">
                          </div>
                     </form>
                </div>
-          
      </header>
+
      <main>
           <div class="mainResultsBox">
                <!-- Results will be displayed here with JavaScript -->
@@ -84,8 +83,8 @@
                     </div>
                </div>
           </section>
-
      </main>
+
      <footer>
           <div class="wrapper footerFlex">
                <span>BY LUCAS BRAKE + CONNIE TSANG, <a href="http://junocollege.com">JUNO COLLEGE</a></span>
@@ -95,8 +94,10 @@
           </div>
      </footer>
 
+     <!-- Jquery import  -->
      <script src='https://code.jquery.com/jquery-3.5.1.min.js'
           integrity='sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=' crossorigin='anonymous'></script>
+     <!-- Linking JavaScript  -->
      <script src="script.js"></script>
 </body>
 

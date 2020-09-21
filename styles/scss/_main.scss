@@ -127,7 +127,6 @@ select {
         }
         
         .listBtn {
-            padding: 5px 30px;
             margin-left: 5px;
         }
     }
@@ -135,9 +134,7 @@ select {
 
 //Appended list section
 .selectedMovies {
-    // background: #FDF1C3;
     background: url('../assets/wrinkledBrownPaper.jpg') no-repeat fixed center/cover;
-    
 }
 
 .listDisplay {
@@ -146,13 +143,10 @@ select {
 
     width: 740px;
     min-width: 70%;
-    // max-width: 1250px;
     margin: 0px auto;
 }
 
 .listHeading {
-    // padding-top: 40px;
-
     color: black;  
     text-transform: uppercase;  
 }
@@ -161,7 +155,6 @@ ul {
     display: flex;
     flex-wrap: wrap;
     
-
     li {
         padding-right: 10px;
         list-style-position: inside;

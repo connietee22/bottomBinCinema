@@ -67,7 +67,7 @@ movieApp.displayMovie = (movies) => {
                         <span><span class="resultLabel">Summary:</span> ${summary}</span>
                         <div class="resultBtn">
                             <button class="btn newMovieBtn" aria-label="Click to get another movie">Get another</button>
-                            <a href="#list" class="btn listBtn" aria-label="click to add to watch list"> + watch list</a>
+                            <a href="#list" class="btn listBtn" aria-label="click to add to watch list"> + list</a>
                         </div>
                     </div>
                 </div>

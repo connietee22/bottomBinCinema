@@ -512,8 +512,7 @@ footer {
 
 @media (max-width: 605px) {
   .headerBox {
-    position: -webkit-sticky;
-    position: sticky;
+    position: static;
     text-align: center;
   }
   .selectHeader {

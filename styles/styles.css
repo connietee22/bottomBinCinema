@@ -463,7 +463,7 @@ ul li {
 
 /********Footer Section************/
 footer {
-  padding: 15px;
+  padding: 15px 0px;
   background: #222;
   color: #EEF0F2;
 }
@@ -505,7 +505,7 @@ footer {
     margin-right: 5px;
   }
   .listDisplay {
-    width: 300px;
+    width: 100%;
     min-width: 30%;
   }
 }

@@ -512,6 +512,8 @@ footer {
 
 @media (max-width: 605px) {
   .headerBox {
+    position: -webkit-sticky;
+    position: sticky;
     text-align: center;
   }
   .selectHeader {
@@ -528,5 +530,12 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+
+@media (hover: hover) {
+  .btn:hover {
+    background: #00a7e2;
+    color: #f6da21;
   }
 }

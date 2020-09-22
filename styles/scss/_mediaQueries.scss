@@ -24,7 +24,9 @@
 }
 
 @media (max-width: 605px) {
+    
     .headerBox {
+        position: sticky;
         text-align: center;
     }
 
@@ -39,5 +41,12 @@
     .footerFlex {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media (hover: hover) {
+    .btn:hover {
+        background: lighten($button, 10);
+        color: $logoColor;
     }
 }

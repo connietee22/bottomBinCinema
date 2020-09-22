@@ -50,3 +50,13 @@
         color: $logoColor;
     }
 }
+
+@media (max-width: 400px) {
+    .recommendedMovie img {
+        width: 100%;
+    }
+
+    .recommendedMovie .resultText {
+        width: 100%;
+    }
+}

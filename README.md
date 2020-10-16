@@ -3,6 +3,7 @@ A movie recommendation app with a catch -- it returns only movies rated under 5/
 
 ### Built by:
 Connie Tsang
+Lucas Brake
 
 ### Tools used:
 jQuery

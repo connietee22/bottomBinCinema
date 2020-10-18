@@ -413,6 +413,7 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-top: 30px;
+  margin-left: 40px;
   min-width: 40%;
   width: 400px;
 }
@@ -444,7 +445,7 @@ main {
   height: 100%;
   min-width: 30%;
   border: 1px solid #000;
-  margin: 0px 40px 20px 0px;
+  margin-bottom: 20px;
   -webkit-box-shadow: 0px 8px 6px -6px #000;
           box-shadow: 0px 8px 6px -6px #000;
 }

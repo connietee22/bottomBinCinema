@@ -547,10 +547,6 @@ footer {
   .recommendedMovie .resultText {
     width: 100%;
   }
-  .recommendedMovie img {
-    margin-right: 0px;
-    margin-left: 0px;
-  }
   .newMovieBtn {
     margin-right: 5px;
   }

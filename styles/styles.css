@@ -327,7 +327,7 @@ h1 {
   -webkit-box-shadow: 0px 8px 6px -6px #000;
           box-shadow: 0px 8px 6px -6px #000;
   height: 10vh;
-  min-height: 160px;
+  min-height: 165px;
   background: rgba(34, 34, 34, 0.9);
 }
 
@@ -404,7 +404,7 @@ main {
   padding: 80px 0px;
 }
 
-.resultText {
+.recommendedMovie .resultText {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -418,12 +418,12 @@ main {
   width: 400px;
 }
 
-.resultText h3 {
+.recommendedMovie .resultText h3 {
   text-transform: uppercase;
   font-weight: 700;
 }
 
-.resultText .resultLabel {
+.recommendedMovie .resultText .resultLabel {
   font-weight: 700;
 }
 
@@ -469,8 +469,6 @@ main {
   right: 5vw;
   width: 320px;
   height: auto;
-  -webkit-transform: rotate(2deg);
-          transform: rotate(2deg);
   -webkit-box-shadow: 1px 1px 1px #000;
           box-shadow: 1px 1px 1px #000;
 }

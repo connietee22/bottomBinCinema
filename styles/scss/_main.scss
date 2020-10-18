@@ -37,7 +37,7 @@ h1 {
 	padding: 25px;
 	box-shadow: 0px 8px 6px -6px $darkText;
 	height: 10vh;
-	min-height: 160px;
+	min-height: 165px;
 
 	background: rgba(34, 34, 34, 0.9);
 }
@@ -109,24 +109,24 @@ main {
 .recommendedMovie {
 	display: flex;
 	padding: 80px 0px;
-}
 
-//Movie details
-.resultText {
-	display: flex;
-	flex-direction: column;
-	padding-top: 30px;
-	margin-left: 40px;
-	min-width: 40%;
-	width: 400px;
+	//Movie details
+	.resultText {
+		display: flex;
+		flex-direction: column;
+		padding-top: 30px;
+		margin-left: 40px;
+		min-width: 40%;
+		width: 400px;
 
-	h3 {
-		text-transform: uppercase;
-		font-weight: 700;
-	}
+		h3 {
+			text-transform: uppercase;
+			font-weight: 700;
+		}
 
-	.resultLabel {
-		font-weight: 700;
+		.resultLabel {
+			font-weight: 700;
+		}
 	}
 }
 
@@ -160,12 +160,10 @@ main {
 	background: url('../assets/wrinkledBrownPaper.jpg') no-repeat fixed center/cover;
 	display: none;
 	position: absolute;
-	// bottom: 200px;
 	bottom: 0;
 	right: 5vw;
 	width: 320px;
 	height: auto;
-	transform: rotate(2deg);
 	box-shadow: 1px 1px 1px $darkText;
 }
 

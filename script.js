@@ -60,9 +60,9 @@ movieApp.displayMovie = (movies) => {
         <section class="results" id="results">
             <div class="wrapper">
                 <div class="recommendedMovie">
-                   <div class="posterButtons">
+                    <div class="posterButtons">
                         <div><img src=${imageSource}></div>
-                         <div class="resultBtn">
+                            <div class="resultBtn">
                                 <button class="btn newMovieBtn" aria-label="Click to get another movie">Get another</button>
                                 <button class="btn listBtn" href="#list" aria-label="click to add to watch list"> + watchlist</button>
                         </div>

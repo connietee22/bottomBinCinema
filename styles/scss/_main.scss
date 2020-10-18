@@ -95,8 +95,8 @@ select {
 .results {
 	background: $resultBackground;
 	color: $lightText;
-	height: calc(80vh - 40px);
 	min-height: 700px;
+	height: calc(80vh - 40px);
 }
 
 //Flex container holding movie results

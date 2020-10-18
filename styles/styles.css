@@ -381,8 +381,8 @@ select:focus {
 .results {
   background: #253031;
   color: #EEF0F2;
-  height: calc(80vh - 40px);
   min-height: 700px;
+  height: calc(80vh - 40px);
 }
 
 .recommendedMovie {

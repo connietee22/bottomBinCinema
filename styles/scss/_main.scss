@@ -10,175 +10,184 @@
 
 //Background image and flex container
 header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
-    height: 100vh;
+	height: 100vh;
 
-    background: url('../assets/unsplashChrisLawtonVHS.jpg') no-repeat fixed center/cover;  
+	background: url('../assets/unsplashChrisLawtonVHS.jpg') no-repeat fixed center/cover;
 }
 
 h1 {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 
-    color: $logoColor;
+	color: $logoColor;
 
-    font-size: clamp(6.5rem, 7.5vw, 12rem);
-    text-align: center;
-    text-shadow: 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black;
-    text-transform: uppercase;
+	font-size: clamp(6.5rem, 7.5vw, 12rem);
+	text-align: center;
+	text-shadow: 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black, 0px 0px 20px black;
+	text-transform: uppercase;
 }
 
 //Box behind select menus
 .headerBox {
-    position: sticky;
+	// position: sticky;
 
-    top: 0;
-    border-radius: 2px;
-    padding: 25px;
-    box-shadow: 0px 8px 6px -6px $darkText;
+	// top: 0;
+	border-radius: 2px;
+	padding: 25px;
+	box-shadow: 0px 8px 6px -6px $darkText;
+	height: 20vh;
+	min-height: 160px;
 
-    background: rgba(34, 34, 34, .9);
+	background: rgba(34, 34, 34, 0.9);
+}
+
+.sticky {
+	position: sticky;
+	top: 0;
+	z-index: 999;
 }
 
 h2 {
-    margin-top: -10px;
-    color: $lightText;
-    font-size: clamp(2.4rem, 1.8vw, 3.5rem);
-    font-weight: 700;
+	margin-top: -10px;
+	color: $lightText;
+	font-size: clamp(2.4rem, 1.8vw, 3.5rem);
+	font-weight: 700;
 }
 
 //h3 over select menus
 .selectHeader {
-    color: $lightText;
-    margin-top: 10px;
-    text-transform: uppercase;
+	color: $lightText;
+	margin-top: 10px;
+	text-transform: uppercase;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 //Select drop down menus
 select {
-    margin-right: 10px;
-    padding: 7.5px 15px;
-    width: 175px;
+	margin-right: 10px;
+	padding: 7.5px 15px;
+	width: 175px;
 
-    font-size: 1.4rem;
+	font-size: 1.4rem;
 
-    &:focus {
-        outline: 1px solid $logoColor;
-    }
+	&:focus {
+		outline: 1px solid $logoColor;
+	}
 }
 
 //form submit button
-[type="submit"] {
-    padding: 7px 30px;
-    width: 168px;
-    font-size: 1.6rem;
+[type='submit'] {
+	padding: 7px 30px;
+	width: 168px;
+	font-size: 1.6rem;
 }
 
 /********Results Section************/
 .results {
-    background: $resultBackground;
-    color: $lightText;
+	background: $resultBackground;
+	color: $lightText;
+	height: calc(80vh - 40px);
+	min-height: 700px;
 }
 
 //Flex container holding movie results
 .recommendedMovie {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 
-    width: 100%;
-    height: 100%;
-    padding: 80px 0px;
+	width: 100%;
+	height: 100%;
+	padding: 80px 0px;
 
-    //Movie Poster
-    img {
-        width: 300px;
-        min-width: 30%;
-        border: 1px solid $darkText;
-        margin-right: 40px;
-        box-shadow: 0px 8px 6px -6px $darkText;
-    }
+	//Movie Poster
+	img {
+		width: 300px;
+		min-width: 30%;
+		border: 1px solid $darkText;
+		margin-right: 40px;
+		box-shadow: 0px 8px 6px -6px $darkText;
+	}
 
-    //Movie details
-    .resultText {
-        display: flex;
-        flex-direction: column;
-        padding-top: 30px;
-        min-width: 40%;
-        width: 400px;
-        
-        h3 {
-            text-transform: uppercase;
-            font-weight: 700;
-        }
+	//Movie details
+	.resultText {
+		display: flex;
+		flex-direction: column;
+		padding-top: 30px;
+		min-width: 40%;
+		width: 400px;
 
-        .resultLabel {
-            font-weight: 700;
-        }
+		h3 {
+			text-transform: uppercase;
+			font-weight: 700;
+		}
 
-        .resultBtn {
-            margin-top: 30px;
-            display: flex;
-        }
-        
-        .listBtn {
-            margin-left: 5px;
-        }
-    }
+		.resultLabel {
+			font-weight: 700;
+		}
+
+		.resultBtn {
+			margin-top: 30px;
+			display: flex;
+		}
+
+		.listBtn {
+			margin-left: 5px;
+		}
+	}
 }
 
 //Appended list section
 .selectedMovies {
-    background: url('../assets/wrinkledBrownPaper.jpg') no-repeat fixed center/cover;
+	background: url('../assets/wrinkledBrownPaper.jpg') no-repeat fixed center/cover;
 }
 
 .listDisplay {
-    display: none;
-    padding: 40px 0px;
+	display: none;
+	padding: 40px 0px;
 
-    width: 740px;
-    min-width: 70%;
-    margin: 0px auto;
+	width: 740px;
+	min-width: 70%;
+	margin: 0px auto;
 }
 
 .listHeading {
-    color: $darkText;  
-    text-transform: uppercase;  
+	color: $darkText;
+	text-transform: uppercase;
 }
 
 ul {
-    display: flex;
-    flex-wrap: wrap;
-    
-    li {
-        padding-right: 10px;
-        list-style-position: inside;
-        
-    }
+	display: flex;
+	flex-wrap: wrap;
+
+	li {
+		padding-right: 10px;
+		list-style-position: inside;
+	}
 }
 
 /********Footer Section************/
 
 footer {
-    padding: 15px 0px;
-    background: $footerBackground;
-    color: $lightText;
+	padding: 15px 0px;
+	background: $footerBackground;
+	color: $lightText;
 }
 
 .footerFlex {
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
+	display: flex;
+	text-align: center;
+	justify-content: space-between;
 }
 
 .creditsFlex {
-    display: flex;
+	display: flex;
 }

@@ -100,6 +100,7 @@ select {
 	color: $lightText;
 
 	height: calc(85vh - 45px);
+	min-height: 750px;
 }
 
 //Flex container holding movie results
@@ -107,10 +108,49 @@ select {
 	display: flex;
 	justify-content: center;
 
-	// width: 100%;
-	// height: 100%;
 	padding: 80px 0px;
 
+	// //Movie Poster
+	// img {
+	// 	width: 300px;
+	// 	height: 100%;
+	// 	min-width: 30%;
+	// 	border: 1px solid $darkText;
+	// 	margin-right: 40px;
+	// 	box-shadow: 0px 8px 6px -6px $darkText;
+	// }
+
+	//Movie details
+	.resultText {
+		// display: flex;
+		// flex-direction: column;
+		padding-top: 30px;
+		min-width: 40%;
+		width: 400px;
+
+		h3 {
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+
+		// .resultLabel {
+		// 	font-weight: 700;
+		// }
+
+		// .resultBtn {
+		// 	margin-top: 30px;
+		// 	display: flex;
+		// }
+
+		// .listBtn {
+		// 	margin-left: 5px;
+		// }
+	}
+}
+
+.posterButtons {
+	display: flex;
+	flex-direction: column;
 	//Movie Poster
 	img {
 		width: 300px;
@@ -121,31 +161,17 @@ select {
 		box-shadow: 0px 8px 6px -6px $darkText;
 	}
 
-	//Movie details
-	.resultText {
+	.resultLabel {
+		font-weight: 700;
+	}
+
+	.resultBtn {
+		margin-top: 30px;
 		display: flex;
-		flex-direction: column;
-		padding-top: 30px;
-		min-width: 40%;
-		width: 400px;
+	}
 
-		h3 {
-			text-transform: uppercase;
-			font-weight: 700;
-		}
-
-		.resultLabel {
-			font-weight: 700;
-		}
-
-		.resultBtn {
-			margin-top: 30px;
-			display: flex;
-		}
-
-		.listBtn {
-			margin-left: 5px;
-		}
+	.listBtn {
+		margin-left: 5px;
 	}
 }
 

@@ -59,16 +59,18 @@ movieApp.displayMovie = (movies) => {
         <section class="results" id="results">
             <div class="wrapper">
                 <div class="recommendedMovie">
-                    <img src=${imageSource}>
+                   <div class="posterButtons">
+                        <div><img src=${imageSource}></div>
+                         <div class="resultBtn">
+                                <button class="btn newMovieBtn" aria-label="Click to get another movie">Get another</button>
+                                <a href="#list" class="btn listBtn" aria-label="click to add to watch list"> + list</a>
+                        </div>
+                    </div>
                     <div class="resultText">
                         <h3>${title}</h3>
                         <span><span class="resultLabel">Vote Average:</span> ${voteAverage}/10</span>
                         <span><span class="resultLabel">Release Date:</span> ${releaseDate}</span>
                         <span><span class="resultLabel">Summary:</span> ${summary}</span>
-                        <div class="resultBtn">
-                            <button class="btn newMovieBtn" aria-label="Click to get another movie">Get another</button>
-                            <a href="#list" class="btn listBtn" aria-label="click to add to watch list"> + list</a>
-                        </div>
                     </div>
                 </div>
             <div>

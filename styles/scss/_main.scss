@@ -33,13 +33,10 @@ h1 {
 
 //Box behind select menus
 .headerBox {
-	// position: sticky;
-
-	// top: 0;
 	border-radius: 2px;
 	padding: 25px;
 	box-shadow: 0px 8px 6px -6px $darkText;
-	height: 20vh;
+	height: 15vh;
 	min-height: 160px;
 
 	background: rgba(34, 34, 34, 0.9);
@@ -92,11 +89,17 @@ select {
 }
 
 /********Results Section************/
+
+.mainResultsBox {
+	min-height: 700px;
+	min-height: auto;
+}
+
 .results {
 	background: $resultBackground;
 	color: $lightText;
-	min-height: 700px;
-	height: calc(80vh - 40px);
+
+	height: calc(85vh - 45px);
 }
 
 //Flex container holding movie results
@@ -104,13 +107,14 @@ select {
 	display: flex;
 	justify-content: center;
 
-	width: 100%;
-	height: 100%;
+	// width: 100%;
+	// height: 100%;
 	padding: 80px 0px;
 
 	//Movie Poster
 	img {
 		width: 300px;
+		height: 100%;
 		min-width: 30%;
 		border: 1px solid $darkText;
 		margin-right: 40px;

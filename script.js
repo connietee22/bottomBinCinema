@@ -63,7 +63,7 @@ movieApp.displayMovie = (movies) => {
                         <div><img src=${imageSource}></div>
                          <div class="resultBtn">
                                 <button class="btn newMovieBtn" aria-label="Click to get another movie">Get another</button>
-                                <a href="#list" class="btn listBtn" aria-label="click to add to watch list"> + list</a>
+                                <button class="btn listBtn" href="#list" aria-label="click to add to watch list"> + list</button>
                         </div>
                     </div>
                     <div class="resultText">

@@ -36,7 +36,7 @@ h1 {
 	border-radius: 2px;
 	padding: 25px;
 	box-shadow: 0px 8px 6px -6px $darkText;
-	height: 15vh;
+	height: 10vh;
 	min-height: 160px;
 
 	background: rgba(34, 34, 34, 0.9);
@@ -91,7 +91,6 @@ select {
 /********Results Section************/
 
 .mainResultsBox {
-	min-height: 700px;
 	min-height: auto;
 }
 
@@ -99,8 +98,8 @@ select {
 	background: $resultBackground;
 	color: $lightText;
 
-	height: calc(85vh - 45px);
-	min-height: 750px;
+	// height: calc(85vh - 45px);
+	min-height: 800px;
 }
 
 //Flex container holding movie results
@@ -110,20 +109,8 @@ select {
 
 	padding: 80px 0px;
 
-	// //Movie Poster
-	// img {
-	// 	width: 300px;
-	// 	height: 100%;
-	// 	min-width: 30%;
-	// 	border: 1px solid $darkText;
-	// 	margin-right: 40px;
-	// 	box-shadow: 0px 8px 6px -6px $darkText;
-	// }
-
 	//Movie details
 	.resultText {
-		// display: flex;
-		// flex-direction: column;
 		padding-top: 30px;
 		min-width: 40%;
 		width: 400px;
@@ -132,25 +119,13 @@ select {
 			text-transform: uppercase;
 			font-weight: 700;
 		}
-
-		// .resultLabel {
-		// 	font-weight: 700;
-		// }
-
-		// .resultBtn {
-		// 	margin-top: 30px;
-		// 	display: flex;
-		// }
-
-		// .listBtn {
-		// 	margin-left: 5px;
-		// }
 	}
 }
 
 .posterButtons {
 	display: flex;
 	flex-direction: column;
+
 	//Movie Poster
 	img {
 		width: 300px;

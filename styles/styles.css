@@ -322,7 +322,7 @@ h1 {
   padding: 25px;
   -webkit-box-shadow: 0px 8px 6px -6px #000;
           box-shadow: 0px 8px 6px -6px #000;
-  height: 15vh;
+  height: 10vh;
   min-height: 160px;
   background: rgba(34, 34, 34, 0.9);
 }
@@ -379,15 +379,13 @@ select:focus {
 
 /********Results Section************/
 .mainResultsBox {
-  min-height: 700px;
   min-height: auto;
 }
 
 .results {
   background: #253031;
   color: #EEF0F2;
-  height: calc(85vh - 45px);
-  min-height: 750px;
+  min-height: 800px;
 }
 
 .recommendedMovie {
@@ -529,6 +527,7 @@ footer {
   .headerBox {
     position: static;
     text-align: center;
+    min-height: 200px;
   }
   .selectHeader {
     margin-bottom: 6px;
@@ -557,6 +556,10 @@ footer {
 @media (max-width: 400px) {
   .recommendedMovie img {
     width: 100%;
+  }
+  .recommendedMovie,
+  .results {
+    height: auto;
   }
   .recommendedMovie .resultText {
     width: 100%;

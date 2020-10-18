@@ -464,7 +464,7 @@ main {
   background: url("../assets/wrinkledBrownPaper.jpg") no-repeat fixed center/cover;
   display: none;
   position: absolute;
-  bottom: 225px;
+  bottom: 200px;
   right: 5vw;
   width: 320px;
   height: auto;

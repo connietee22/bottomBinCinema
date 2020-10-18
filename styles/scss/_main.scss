@@ -90,6 +90,10 @@ select {
 
 /********Results Section************/
 
+main {
+	position: relative;
+}
+
 .mainResultsBox {
 	min-height: auto;
 }
@@ -97,70 +101,76 @@ select {
 .results {
 	background: $resultBackground;
 	color: $lightText;
-
-	// height: calc(85vh - 45px);
-	min-height: 800px;
+	width: 100%;
+	min-height: 775px;
 }
 
 //Flex container holding movie results
 .recommendedMovie {
 	display: flex;
-	justify-content: center;
-
 	padding: 80px 0px;
+}
 
-	//Movie details
-	.resultText {
-		padding-top: 30px;
-		min-width: 40%;
-		width: 400px;
+//Movie details
+.resultText {
+	display: flex;
+	flex-direction: column;
+	padding-top: 30px;
+	min-width: 40%;
+	width: 400px;
 
-		h3 {
-			text-transform: uppercase;
-			font-weight: 700;
-		}
+	h3 {
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	.resultLabel {
+		font-weight: 700;
 	}
 }
 
 .posterButtons {
 	display: flex;
 	flex-direction: column;
-
+	align-items: center;
 	//Movie Poster
 	img {
 		width: 300px;
 		height: 100%;
 		min-width: 30%;
 		border: 1px solid $darkText;
-		margin-right: 40px;
+		margin: 0px 40px 20px;
 		box-shadow: 0px 8px 6px -6px $darkText;
-	}
-
-	.resultLabel {
-		font-weight: 700;
-	}
-
-	.resultBtn {
-		margin-top: 30px;
-		display: flex;
 	}
 
 	.listBtn {
 		margin-left: 5px;
+	}
+
+	.resultBtn {
+		display: flex;
+		margin-top: 30px auto 0px;
 	}
 }
 
 //Appended list section
 .selectedMovies {
 	background: url('../assets/wrinkledBrownPaper.jpg') no-repeat fixed center/cover;
+	display: none;
+	position: absolute;
+	bottom: 375px;
+	right: 5vw;
+	width: 320px;
+	height: auto;
+	transform: rotate(2deg);
+	box-shadow: 1px 1px 1px $darkText;
 }
 
 .listDisplay {
-	display: none;
-	padding: 40px 0px;
+	// display: none;
+	padding: 20px 10px;
 
-	width: 740px;
-	min-width: 70%;
+	width: 320px;
 	margin: 0px auto;
 }
 

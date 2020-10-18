@@ -214,7 +214,7 @@ html {
 }
 
 body {
-  font-size: clamp(1.3rem, 1.2vw, 1.8rem);
+  font-size: clamp(1.6rem, 1.6vw, 2rem);
   font-family: "Kumbh Sans", sans-serif;
   line-height: 1.6;
 }
@@ -234,13 +234,17 @@ h1 {
 }
 
 h3 {
-  font-size: clamp(1.8rem, 1.6vw, 2rem);
+  font-size: clamp(2rem, 2vw, 2.5rem);
 }
 
 .wrapper {
-  width: 80%;
-  max-width: 1150px;
+  width: 90%;
+  max-width: 1300px;
   margin: 0px auto;
+}
+
+li {
+  color: #000;
 }
 
 img {
@@ -267,15 +271,15 @@ a:focus {
   border-radius: 2px;
   -webkit-box-shadow: 0px 8px 6px -6px #000;
           box-shadow: 0px 8px 6px -6px #000;
-  padding: 3px 30px;
+  padding: 8px 30px;
   background: #0081AF;
   color: #EEF0F2;
   font-size: 1.6rem;
   text-transform: lowercase;
   font-weight: bold;
   text-align: center;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .btn:hover {
@@ -378,6 +382,10 @@ select:focus {
 }
 
 /********Results Section************/
+main {
+  position: relative;
+}
+
 .mainResultsBox {
   min-height: auto;
 }
@@ -385,27 +393,36 @@ select:focus {
 .results {
   background: #253031;
   color: #EEF0F2;
-  min-height: 800px;
+  width: 100%;
+  min-height: 775px;
 }
 
 .recommendedMovie {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   padding: 80px 0px;
 }
 
-.recommendedMovie .resultText {
+.resultText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding-top: 30px;
   min-width: 40%;
   width: 400px;
 }
 
-.recommendedMovie .resultText h3 {
+.resultText h3 {
   text-transform: uppercase;
+  font-weight: 700;
+}
+
+.resultText .resultLabel {
   font-weight: 700;
 }
 
@@ -417,6 +434,9 @@ select:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .posterButtons img {
@@ -424,35 +444,39 @@ select:focus {
   height: 100%;
   min-width: 30%;
   border: 1px solid #000;
-  margin-right: 40px;
+  margin: 0px 40px 20px;
   -webkit-box-shadow: 0px 8px 6px -6px #000;
           box-shadow: 0px 8px 6px -6px #000;
-}
-
-.posterButtons .resultLabel {
-  font-weight: 700;
-}
-
-.posterButtons .resultBtn {
-  margin-top: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .posterButtons .listBtn {
   margin-left: 5px;
 }
 
+.posterButtons .resultBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px auto 0px;
+}
+
 .selectedMovies {
   background: url("../assets/wrinkledBrownPaper.jpg") no-repeat fixed center/cover;
+  display: none;
+  position: absolute;
+  bottom: 375px;
+  right: 5vw;
+  width: 320px;
+  height: auto;
+  -webkit-transform: rotate(2deg);
+          transform: rotate(2deg);
+  -webkit-box-shadow: 1px 1px 1px #000;
+          box-shadow: 1px 1px 1px #000;
 }
 
 .listDisplay {
-  display: none;
-  padding: 40px 0px;
-  width: 740px;
-  min-width: 70%;
+  padding: 20px 10px;
+  width: 320px;
   margin: 0px auto;
 }
 
@@ -497,29 +521,39 @@ footer {
   display: flex;
 }
 
+@media (max-width: 1350px) {
+  .selectedMovies {
+    position: static;
+    width: 100%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  .recommendedMovie {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 @media (max-width: 768px) {
   .recommendedMovie {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   .recommendedMovie .resultText {
-    width: 300px;
-    min-width: 30%;
+    width: 100%;
   }
   .recommendedMovie img {
-    margin: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
   }
   .newMovieBtn {
     margin-right: 5px;
   }
   .listDisplay {
     width: 100%;
-    min-width: 30%;
   }
 }
 
@@ -528,6 +562,7 @@ footer {
     position: static;
     text-align: center;
     min-height: 200px;
+    height: auto;
   }
   .selectHeader {
     margin-bottom: 6px;
@@ -550,18 +585,5 @@ footer {
   .btn:hover {
     background: #00a7e2;
     color: #f6da21;
-  }
-}
-
-@media (max-width: 400px) {
-  .recommendedMovie img {
-    width: 100%;
-  }
-  .recommendedMovie,
-  .results {
-    height: auto;
-  }
-  .recommendedMovie .resultText {
-    width: 100%;
   }
 }

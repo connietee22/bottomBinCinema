@@ -63,7 +63,7 @@ movieApp.displayMovie = (movies) => {
                         <div><img src=${imageSource}></div>
                          <div class="resultBtn">
                                 <button class="btn newMovieBtn" aria-label="Click to get another movie">Get another</button>
-                                <button class="btn listBtn" href="#list" aria-label="click to add to watch list"> + list</button>
+                                <button class="btn listBtn" href="#list" aria-label="click to add to watch list"> + watchlist</button>
                         </div>
                     </div>
                     <div class="resultText">
@@ -73,15 +73,17 @@ movieApp.displayMovie = (movies) => {
                         <span><span class="resultLabel">Summary:</span> ${summary}</span>
                     </div>
                 </div>
-            <div>
         </section>
     `);
+
+	$('.selectedMovies').show();
 
 	// event listener for "add to list" button -- with .one instead of .on, action can only be appended once
 	$('.listBtn').one('click', function () {
 		$('ul').append(`<li>${title}</li>`);
+		// $('.listDisplay').show();
+
 		//listDisplay is initially set to display: none so it doesn't appear on the screen on refresh -- will show and refresh itself once the list button is clicked.
-		$('.listDisplay').show();
 	});
 
 	//allows users to easily select a new movie within the same genre/decade initially selected
@@ -97,7 +99,6 @@ movieApp.triggerNav = () => {
 		$headerBoxPos = $('.headerBox').scrollTop();
 
 		if ($(this).scrollTop() > $headerBoxPos) {
-			// console.log($windowHeight);
 			$('div.headerBox').addClass('sticky');
 		} else {
 			$('.headerBox').removeClass('sticky');

@@ -1,12 +1,12 @@
 html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 body {
-    font-size: clamp(1.3rem, 1.2vw, 1.8rem);
-    font-family: $bodyfont;
-    line-height: 1.6;
+	font-size: clamp(1.6rem, 1.6vw, 2rem);
+	font-family: $bodyfont;
+	line-height: 1.6;
 }
 
 h1,
@@ -14,68 +14,71 @@ h2,
 h3,
 p,
 ul {
-    padding: 0px;
-    margin: 0px;
+	padding: 0px;
+	margin: 0px;
 }
 
 h1 {
-    font-family: $headingfont;
-    line-height: 1.1;
+	font-family: $headingfont;
+	line-height: 1.1;
 }
 
 h3 {
-    font-size: clamp(1.8rem, 1.6vw, 2rem);
+	font-size: clamp(2rem, 2vw, 2.5rem);
 }
 
 .wrapper {
-    width: 80%;
-    max-width: 1150px;
-    margin: 0px auto;
+	width: 90%;
+	max-width: 1300px;
+	margin: 0px auto;
+}
+
+li {
+	color: $darkText;
 }
 
 img {
-    width: 100%;
-    height: auto;
-    display: block;
+	width: 100%;
+	height: auto;
+	display: block;
 }
 
 a {
-    text-decoration: none;
-    color: $lightText;
+	text-decoration: none;
+	color: $lightText;
 
-    &:hover {
-        color: $footerHover;
-    }
-    &:focus {
-        color: $footerHover;
-    }
+	&:hover {
+		color: $footerHover;
+	}
+	&:focus {
+		color: $footerHover;
+	}
 }
 
 .btn {
-    border: none;
-    border-radius: 2px;
-    box-shadow: 0px 8px 6px -6px $darkText;
-    padding: 3px 30px;
+	border: none;
+	border-radius: 2px;
+	box-shadow: 0px 8px 6px -6px $darkText;
+	padding: 8px 30px;
 
-    background: $button;
-    color: $lightText;
+	background: $button;
+	color: $lightText;
 
-    font-size: 1.6rem;
-    text-transform: lowercase;
-    font-weight: bold;
-    text-align: center;
+	font-size: 1.6rem;
+	text-transform: lowercase;
+	font-weight: bold;
+	text-align: center;
 
-    transition: all .3s; 
+	transition: all 0.3s;
 
+	&:hover {
+		background: lighten($button, 10);
+		color: $logoColor;
+	}
 
-    &:hover {
-        background: lighten($button, 10);
-        color: $logoColor;
-    }
-
-    &:focus {
-        background: lighten($button, 10);
-        outline: 1px solid $logoColor;
-        color: $logoColor;
-    }
+	&:focus {
+		background: lighten($button, 10);
+		outline: 1px solid $logoColor;
+		color: $logoColor;
+	}
 }

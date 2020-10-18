@@ -7,6 +7,7 @@ let getGenreValue;
 let getDecadeValue;
 let startDate;
 let endDate;
+let counter = 0;
 
 // API call to grab movies data based on search parameters
 movieApp.getMovies = (genres, startDate, endDate) => {
@@ -80,10 +81,12 @@ movieApp.displayMovie = (movies) => {
 
 	// event listener for "add to list" button -- with .one instead of .on, action can only be appended once
 	$('.listBtn').one('click', function () {
-		$('ul').append(`<li>${title}</li>`);
-		// $('.listDisplay').show();
-
-		//listDisplay is initially set to display: none so it doesn't appear on the screen on refresh -- will show and refresh itself once the list button is clicked.
+		counter = counter + 1;
+		if (counter > 10) {
+			alert("You already have 10 on the list! Maybe it's time to pick a movie!");
+		} else {
+			$('ul').append(`<li>${title}</li>`);
+		}
 	});
 
 	//allows users to easily select a new movie within the same genre/decade initially selected
@@ -103,11 +106,6 @@ movieApp.triggerNav = () => {
 		} else {
 			$('.headerBox').removeClass('sticky');
 		}
-		// if ($(this).scrollTop() > ) {
-		//     $navBg.addClass('sticky');
-		// } else {
-		//     $navBg.removeClass('sticky');
-		// }
 	});
 };
 

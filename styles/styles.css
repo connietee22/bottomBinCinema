@@ -444,7 +444,7 @@ main {
   height: 100%;
   min-width: 30%;
   border: 1px solid #000;
-  margin: 0px 40px 20px;
+  margin: 0px 40px 20px 0px;
   -webkit-box-shadow: 0px 8px 6px -6px #000;
           box-shadow: 0px 8px 6px -6px #000;
 }
@@ -457,14 +457,14 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 30px auto 0px;
+  margin-top: 30px;
 }
 
 .selectedMovies {
   background: url("../assets/wrinkledBrownPaper.jpg") no-repeat fixed center/cover;
   display: none;
   position: absolute;
-  bottom: 375px;
+  bottom: 225px;
   right: 5vw;
   width: 320px;
   height: auto;
@@ -527,6 +527,7 @@ footer {
     width: 100%;
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
+    padding: 20px;
   }
   .recommendedMovie {
     -webkit-box-pack: center;
